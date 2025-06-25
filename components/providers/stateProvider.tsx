@@ -160,7 +160,7 @@ export const Header = ({ openLogin }: { openLogin?: () => void }) => {
 
             <button
                 onClick={() => {
-                    window.location.href = 'https://fb.com/thinkonmay'
+                    window.location.href = 'https://fb.com/thinkonmay';
                 }}
                 className="fixed bottom-8 right-7 bg-primary-700 rounded-full p-4 flex items-center justify-center cursor-pointer hover:bg-primary-600"
             >

@@ -113,7 +113,7 @@ const Addon = {
                     clipRule="evenodd"
                 ></path>
             </svg>
-            {value == 0 ? (
+            {value == 9999 ? (
                 <span className="line-through">Giới hạn giờ chơi</span>
             ) : (
                 <span>Tối đa {value}h chơi</span>
@@ -206,7 +206,7 @@ const subcontents = [
         amount: 499000,
         total_days: 30,
         bonus: {
-            time: 0,
+            time: 9999,
             storage_limit: 400,
             // storage_credit: 0,
             no_waiting_line: true,
@@ -228,38 +228,57 @@ export const FetchPricing = async (): Promise<Plan[]> => {
     const { data, error } = await supabase
         .from('plans')
         .select(
-            'name, policy->size, policy->limit_hour, policy->total_days, policy->refund_days, policy->refund_usage, policy->resources->disk, price->amount, metadata->allow_payment, cluster_pool'
+            'name, policy->size, policy->limit_hour, policy->total_days, policy->refund_days, policy->refund_usage, policy->resources->disk, policy->>title, price->amount, metadata->allow_payment, cluster_pool'
         )
         .eq('active', true)
         .is('metadata->hide', null);
-    if (error) 
+    if (error)
         return subcontents.map((e) => ({
+            title: e.title,
             name: e._name,
             size: Number(e.bonus.storage_limit),
             limit_hour: Number(e.bonus.time),
             total_days: Number(e.total_days),
-            amount:     Number(e.amount),
+            amount: Number(e.amount),
             allow_payment: true,
             bonus: e.bonus
         }));
     else
         return data.map((e) => ({
             name: e.name,
+            title: e.title,
             size: Number(e.size),
             limit_hour: Number(e.limit_hour),
             total_days: Number(e.total_days),
             amount: Number(e.amount),
             allow_payment: Boolean(e.allow_payment),
             bonus: {
-                time: Number(e.limit_hour) ?? subcontents.find((x) => x._name == e.name)?.bonus.time,
-                storage_limit: Number(e.disk) ?? subcontents.find((x) => x._name == e.name)?.bonus.storage_limit ,
+                time:
+                    Number(e.limit_hour) ??
+                    subcontents.find((x) => x._name == e.name)?.bonus.time,
+                storage_limit:
+                    Number(e.disk) ??
+                    subcontents.find((x) => x._name == e.name)?.bonus
+                        .storage_limit,
                 // storage_credit: 0,
-                no_waiting_line: e.cluster_pool.length > 0 ? true : subcontents.find((x) => x._name == e.name)?.bonus.no_waiting_line,
-                multiple_cluster: e.cluster_pool.length > 0 ? true : subcontents.find((x) => x._name == e.name)?.bonus.multiple_cluster,
-                refundtime: Number(e.refund_usage) ?? subcontents.find((x) => x._name == e.name)?.bonus.refundtime,
-                refundday: Number(e.refund_days) ?? subcontents.find((x) => x._name == e.name)?.bonus.refundday,
-
-            },
+                no_waiting_line:
+                    e.cluster_pool.length > 0
+                        ? true
+                        : subcontents.find((x) => x._name == e.name)?.bonus
+                              .no_waiting_line,
+                multiple_cluster:
+                    e.cluster_pool.length > 0
+                        ? true
+                        : subcontents.find((x) => x._name == e.name)?.bonus
+                              .multiple_cluster,
+                refundtime:
+                    Number(e.refund_usage) ??
+                    subcontents.find((x) => x._name == e.name)?.bonus
+                        .refundtime,
+                refundday:
+                    Number(e.refund_days) ??
+                    subcontents.find((x) => x._name == e.name)?.bonus.refundday
+            }
         }));
 };
 
@@ -312,7 +331,11 @@ const DomainSelection = async () => {
                 className="h-12 border bg-gray-200 dark:bg-gray-900 border-gray-300 dark:text-white text-center text-black text-base rounded-lg block w-50 py-2.5 px-4 focus:outline-none justify-self-center cursor-pointer"
             >
                 {domains.map((domain, index) => (
-                    <option key={index} value={domain.domain} disabled={!domain.allow_pay}>
+                    <option
+                        key={index}
+                        value={domain.domain}
+                        disabled={!domain.allow_pay}
+                    >
                         {domain.domain.replace('.thinkmay.net', '')}
                     </option>
                 ))}
@@ -329,7 +352,7 @@ export const Pricing = async () => {
                 key={index}
                 className="flex flex-col p-6 mx-auto max-w-xl text-center  rounded-lg border shadow xl:max-w-lg border-primary-600 bg-gray-200 dark:bg-gray-800 xl:p-8"
             >
-                {plan.highlight ? (
+                {plan.total_days == 30 ? (
                     <div className="mb-2">
                         <span className="py-1 px-3 text-sm text-primary-800 bg-primary-100 rounded dark:bg-primary-200 dark:text-primary-800">
                             Most popular

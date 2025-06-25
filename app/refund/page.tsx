@@ -48,7 +48,17 @@ export default function Page() {
             }
         );
         if (errr) throw new Error(errr.message);
-        else if (sub.length > 0) setSubscription(sub.at(0));
+        else if (sub.length > 0) {
+            setSubscription(sub.at(0));
+            const { data: plan_policy, error: errrr } = await supabase
+                .from('plans')
+                .select('policy->>refund_days, policy->>refund_usage')
+                .eq('name', sub[0].plan_name);
+            if (errrr) throw new Error(errrr.message);
+            else if (plan_policy.length > 0) {
+                setPlanPolicy(plan_policy.at(0));
+            }
+        }
         setStep('condition');
     };
 
@@ -60,6 +70,19 @@ export default function Page() {
           }
         | undefined
     >(undefined);
+
+    const [planPolicy, setPlanPolicy] = useState<
+        | {
+              refund_days: string;
+              refund_usage: string;
+          }
+        | undefined
+    >(undefined);
+
+    const { refund_days, refund_usage } = planPolicy ?? {
+        refund_days: 0,
+        refund_usage: 0
+    };
 
     const { total_usage, last_payment, plan_name } = subscription ?? {
         total_usage: 999,
@@ -81,21 +104,11 @@ export default function Page() {
     let out_of_day = false;
     let out_of_time = false;
 
-    if (plan_name?.includes('week')) {
-        out_of_day =
-            now.getTime() - new Date(last_payment).getTime() >
-            3 * 24 * 3600 * 1000;
-        out_of_time = total_usage > 2;
-
-        applicable = subscription != undefined && !out_of_day && !out_of_time;
-    } else if (plan_name?.includes('month')) {
-        out_of_day =
-            now.getTime() - new Date(last_payment).getTime() >
-            5 * 24 * 3600 * 1000;
-        out_of_time = total_usage > 12;
-
-        applicable = subscription != undefined && !out_of_day && !out_of_time;
-    }
+    out_of_day =
+        now.getTime() - new Date(last_payment).getTime() >
+        Number(refund_days) * 24 * 3600 * 1000;
+    out_of_time = total_usage > Number(refund_usage);
+    applicable = subscription != undefined && !out_of_day && !out_of_time;
 
     switch (step) {
         case 'condition':
@@ -141,9 +154,15 @@ function RefundStatus() {
             <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
                 <div className="mx-auto max-w-lg md:max-w-5xl">
                     <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
-                        Vui lòng gửi lại QR nhận tiền & email vào Fanpage để được hỗ trợ hoàn tiền.
-                        <br/>
-                        <a href='https://fb.com/thinkonmay' className='text-blue-500 underline'>Fanpage Thinkmay</a>
+                        Vui lòng gửi lại QR nhận tiền & email vào Fanpage để
+                        được hỗ trợ hoàn tiền.
+                        <br />
+                        <a
+                            href="https://fb.com/thinkonmay"
+                            className="text-blue-500 underline"
+                        >
+                            Fanpage Thinkmay
+                        </a>
                     </h2>
                 </div>
             </div>
@@ -274,7 +293,7 @@ function StatusBar() {
     return (
         <div className="space-y-6 sm:space-y-8">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
-                Product return form
+                Quy trình hoàn tiền
             </h2>
 
             <ol className="flex flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800 sm:justify-center md:flex-row md:items-center lg:gap-6">
@@ -297,7 +316,7 @@ function StatusBar() {
                         />
                     </svg>
                     <p className="text-sm font-medium leading-tight text-primary-700 dark:text-primary-500">
-                        Return requirement
+                        Yêu cầu hoàn tiền
                     </p>
                 </li>
 
@@ -322,7 +341,7 @@ function StatusBar() {
                         />
                     </svg>
                     <p className="text-sm font-medium leading-tight text-primary-700 dark:text-primary-500">
-                        Return reason
+                        Lý do hoàn tiền
                     </p>
                 </li>
 
@@ -347,7 +366,7 @@ function StatusBar() {
                         />
                     </svg>
                     <p className="text-sm font-medium leading-tight text-gray-500 dark:text-gray-400">
-                        Delivery option
+                        Phương thức hoàn tiền
                     </p>
                 </li>
 
@@ -372,7 +391,7 @@ function StatusBar() {
                         />
                     </svg>
                     <p className="text-sm font-medium leading-tight text-gray-500 dark:text-gray-400">
-                        Confirmation
+                        Xác nhận hoàn tiền
                     </p>
                 </li>
             </ol>
@@ -440,7 +459,7 @@ function RefundReason({ next }: { next: (_: ReasonCallback) => void }) {
     };
 
     const reasons = [
-        'Tôi không thể sử dụng Thinkmay do vấn đề giật lagg',
+        'Tôi không thể sử dụng Thinkmay do vấn đề giật lag',
         'Tôi không không thể chơi game mình muốn trên Thinkmay',
         'Tôi không hài lòng với cách hỗ trợ người dùng của Thinkmay',
         'Tôi không biết cách dùng Thinkmay'
@@ -483,13 +502,13 @@ function RefundReason({ next }: { next: (_: ReasonCallback) => void }) {
                         htmlFor="reason-message"
                         className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                     >
-                        Write here the condition of the product
+                        Trải nghiệm sử dụng của bạn
                     </label>
                     <textarea
                         id="reason-message"
                         rows={4}
                         className="mb-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:mb-5"
-                        placeholder="e.g. I used the product for 10 months and it has fine scratches"
+                        placeholder="Vd: Nhiều kết nối thiếu ổn định"
                         ref={ofeedback}
                     ></textarea>
                 </div>
@@ -508,13 +527,13 @@ function RefundReason({ next }: { next: (_: ReasonCallback) => void }) {
                         htmlFor="reason-message"
                         className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                     >
-                        Write the reason why you want the refund
+                        Lý do bạn muốn hoàn tiền
                     </label>
                     <textarea
                         id="reason-message"
                         rows={4}
                         className="mb-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:mb-5"
-                        placeholder="e.g. Product malfunction"
+                        placeholder="Vd: Thao tác khó sử dụng ở điện thoại"
                         ref={oreason}
                     ></textarea>
                 </div>
@@ -542,7 +561,7 @@ function RefundReason({ next }: { next: (_: ReasonCallback) => void }) {
                         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
                             <div className="space-y-6 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-8">
                                 <p className="text-base font-medium text-gray-900 dark:text-white">
-                                    What is the condition of the product?
+                                    Trải nghiệm sử dụng Cloud PC của bạn?
                                 </p>
 
                                 <div className="space-y-4">
@@ -559,15 +578,14 @@ function RefundReason({ next }: { next: (_: ReasonCallback) => void }) {
                                         setShowOtherFeedback((old) => !old)
                                     }
                                 >
-                                    Other condition
+                                    Khác
                                 </button>
                                 {showOtherFeedback ? <OtherFeedback /> : null}
                             </div>
 
                             <div className="space-y-6 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-8">
                                 <p className="font-medium text-gray-900 dark:text-white">
-                                    What is the main reason for returning the
-                                    product?
+                                    Lý do muốn hoàn tiền dịch vụ?
                                 </p>
 
                                 <div className="space-y-4">
@@ -603,7 +621,7 @@ function RefundReason({ next }: { next: (_: ReasonCallback) => void }) {
                                             clipRule="evenodd"
                                         />
                                     </svg>
-                                    I have another reason
+                                    Lý do khác
                                 </button>
                                 {showOtherReason ? <OtherReason /> : null}
                             </div>
@@ -613,12 +631,15 @@ function RefundReason({ next }: { next: (_: ReasonCallback) => void }) {
                             className="mb-4 rounded-lg bg-primary-50 p-4 text-sm text-primary-800 dark:bg-gray-800 dark:text-primary-400 sm:text-base"
                             role="alert"
                         >
-                            Kindly select your reasons for returning the product
+                            Vui lòng viết trải nghiệm thật sự của bạn với dịch
+                            vụ, vì điều này sẽ giúp Thinkmay đẩy nhanh quá trình
+                            giải quyết vấn đề của bạn và đảm bảo bạn sẽ một trải
+                            nghiệm sử dụng hài lòng nhất!
+                            {/* Kindly select your reasons for returning the product
                             thoughtfully, as this will aid us in expediting your
                             request resolution and ensuring your utmost
-                            satisfaction with the overall purchase experience.
+                            satisfaction with the overall purchase experience. */}
                         </div>
-
                         <div className="gap-4 sm:flex sm:items-center">
                             <button
                                 onClick={nextw}
@@ -696,7 +717,7 @@ function RefundMethod({
                     <div className="space-y-6">
                         <div className="space-y-1">
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                                4. Select the money back option:
+                                Chọn phương thức hoàn tiền:
                             </h3>
                         </div>
 
@@ -717,7 +738,7 @@ function RefundMethod({
                                 onClick={nextw}
                                 className="mt-4 flex w-full items-center justify-center rounded-lg border border-primary-700 bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:border-primary-800 hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:border-primary-600 dark:bg-primary-600 dark:hover:border-primary-700 dark:hover:bg-primary-700 dark:focus:ring-primary-800 sm:mt-0 sm:w-auto"
                             >
-                                Next: Confirmation
+                                Next: Xác nhận hoàn tiền
                             </button>
                         </div>
                     </div>
@@ -755,12 +776,12 @@ function RefundConfirm({ next }: { next: () => void }) {
 
                         <div>
                             <h3 className="mb-2.5 text-2xl font-extrabold leading-tight text-gray-900 dark:text-white">
-                                Your request has been successfully registered
+                                Yêu cầu hoàn tiền của bạn đã được gửi thành công
                             </h3>
                             <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                                I have successfully received your request to
-                                return this product, until we resolve this case
-                                you can track the status of your order.
+                                Chúng tôi đã nhận được thông tin yêu cầu hoàn
+                                tiền của bạn. Vui lòng liên hệ Fanpage Thinkmay
+                                để biết thêm thông tin!
                             </p>
                         </div>
 
@@ -783,7 +804,7 @@ function RefundConfirm({ next }: { next: () => void }) {
                                     clipRule="evenodd"
                                 />
                             </svg>
-                            View status
+                            Thông tin thêm
                         </a>
                     </div>
                 </div>
