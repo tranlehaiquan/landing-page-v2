@@ -387,80 +387,36 @@ export const Footer = () => {
     );
 };
 
-const qa = [
+export const qa: [Contents, Contents][][] = [
     [
-        {
-            question: 'Thinkmay Cloud PC là gì?',
-            answer: 'Thinkmay Cloud PC là một dịch vụ máy tính cá nhân ảo được cung cấp qua đám mây. Thay vì sử dụng phần cứng máy tính truyền thống, người dùng có thể truy cập một máy tính mạnh mẽ và linh hoạt từ xa qua internet, giúp tiết kiệm chi phí phần cứng và tăng hiệu suất làm việc.'
-        },
-        {
-            question:
-                'Tôi có thể cài đặt các phần mềm trên Thinkmay Cloud PC không?',
-            answer: 'Có, bạn hoàn toàn có thể cài đặt và sử dụng các phần mềm trên Thinkmay Cloud PC giống như trên máy tính thông thường. Dịch vụ hỗ trợ các phần mềm phổ biến như Microsoft Office, Adobe, và nhiều ứng dụng khác.'
-        },
-        {
-            question:
-                'Các thiết bị nào thì dùng được Cloud PC? Tôi có cần đầu tư thiết bị gì không?',
-            answer: 'Mọi thiết bị thông minh (điện thoại, laptop, máy tính bảng, TV...) với kết nối Internet đều có thể sử dụng Cloud PC. Thiết bị quan trọng nhất bạn cần chuẩn bị là thiết bị phát wifi có tốc độ và đường truyền ổn định.  Ngoài ra, để tăng trải nghiệm sử dụng Cloud PC, đặc biệt khi chơi game, bạn có thể mua thêm tay cầm, chuột & bàn phím (khi chơi trên điện thoại) tùy theo nhu cầu.'
-        },
-        {
-            question: 'Trên Thinkmay có thể chơi những game nào?',
-            answer: 'Hầu hết các game đều chơi được trên Thinkmay, trừ 1 số tựa game online như: League of Legends, PUBG, Valorant, vv'
-        }
+        [Contents.FAQ_Q1, Contents.FAQ_A1],
+        [Contents.FAQ_Q2, Contents.FAQ_A2],
+        [Contents.FAQ_Q3, Contents.FAQ_A3],
+        [Contents.FAQ_Q4, Contents.FAQ_A4],
     ],
     [
-        {
-            question: 'Có được chơi thử không? Chơi thử như thế nào?',
-            answer: 'Trước tiên, hãy truy cập vào trang web chính thức của ThinkMay Cloud PC để tìm hiểu thêm về các dịch vụ và các gói sản phẩm, bạn có thể liên hệ với bộ phận hỗ trợ khách hàng live chat. Sau đó, yêu cầu thông tin về việc đăng ký demo hoặc dùng thử dịch vụ'
-        },
-        {
-            question:
-                'Mất bao lâu sau khi thanh toán thì tôi có thể sử dụng Thinkmay CloudPC',
-            answer: 'Quá trình thanh toán của Thinkmay được diễn ra hoàn toàn tự động, bạn có thể lựa chọn hình thức thanh toán chuyển khoản ngân hàng thông qua mã QR. Thông thường hệ thống chỉ mất từ 3-5 phút để bạn có thể bắt đầu sử dụng ngay sau khi Thinkmay xác nhận thanh toán thành công'
-        },
-        {
-            question:
-                'Chính sách hoàn tiền của Thinkmay nếu người dùng dùng gặp lỗi là gì',
-            answer: 'Thinkmay hỗ trợ chính sách hoàn tiền tối đa lên tới 80%, 5 ngày sau khi bạn đăng kí dịch vụ và tối đa 3 giờ chơi. Trong đó điều kiện hoàn tiền hợp lệ là khi bạn gặp phải các lỗi phần mềm đến từ phía Thinkmay, dẫn tới bạn không thể sử dụng sản phẩm một các thoải mái. Để biết thêm thông tin chi tiết về chính sách hoàn tiền, bạn có thể liên hệ với phần hỗ trợ người dùng.'
-        }
+        [Contents.FAQ_Q5, Contents.FAQ_A5],
+        [Contents.FAQ_Q6, Contents.FAQ_A6],
+        [Contents.FAQ_Q7, Contents.FAQ_A7],
     ],
     [
-        {
-            question: 'Tôi phải làm gì gì gặp lỗi và bị giật/lag?',
-            answer: 'Kiểm tra kết nối Internet: Kết nối internet chậm hoặc không ổn định là nguyên nhân phổ biến gây giật lag khi sử dụng dịch vụ cloud PC. Nếu có thể, hãy kết nối trực tiếp qua dây Ethernet thay vì sử dụng Wi-Fi để giảm độ trễ.'
-        },
-        {
-            question: 'Làm sao để tối ưu đường truyền mạng',
-            answer: 'Chọn máy chủ gần vị trí của bạn: ThinkMay Cloud PC cung cấp lựa chọn về máy chủ (server), hãy chọn máy chủ gần khu vực của bạn nhất. Điều này giúp giảm độ trễ và cải thiện hiệu suất.'
-        },
-        {
-            question: 'Làm sao để tối ưu fps trong game',
-            answer: 'Nếu bạn đang sử dụng các ứng dụng hoặc chơi game đòi hỏi đồ họa cao, hãy giảm cấu hình đồ họa trong ứng dụng hoặc game đó.  Đặc biệt là giảm độ phân giải, tắt các hiệu ứng đồ họa không cần thiết để giảm tải cho hệ thống.'
-        },
-        {
-            question:
-                'Làm sao nếu tất cả các cách trên đều không giải quyết được vấn đề',
-            answer: 'Cuối cùng, bạn có thể liên hệ với bộ phận hỗ trợ của ThinkMay để kiểm tra lại hệ thống'
-        }
+        [Contents.FAQ_Q8, Contents.FAQ_A8],
+        [Contents.FAQ_Q9, Contents.FAQ_A9],
+        [Contents.FAQ_Q10, Contents.FAQ_A10],
+        [Contents.FAQ_Q11, Contents.FAQ_A11],
     ]
 ];
 
+
 export const FAQ = () => {
-    const renderQA = (
-        {
-            question,
-            answer
-        }: {
-            question: string;
-            answer: string;
-        },
-        index: number
-    ) => (
+    const { t } = useLanguage();
+
+    const renderQA = ([questionKey, answerKey]: [Contents, Contents], index: number) => (
         <div key={index} className="mb-10">
             <h3 className="mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                {question}
+                {t(questionKey)}
             </h3>
-            <p className="text-gray-500 dark:text-gray-400">{answer}</p>
+            <p className="text-gray-500 dark:text-gray-400">{t(answerKey)}</p>
         </div>
     );
 
@@ -469,11 +425,10 @@ export const FAQ = () => {
             <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-lg text-center">
                     <h2 className="mb-2 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                        Những câu hỏi thường gặp
+                        {t(Contents.FAQ_TITLE_1)}
                     </h2>
                     <p className="mb-8 text-gray-500 lg:text-lg dark:text-gray-400">
-                        Bạn có thể nhắn tin trong phần hỗ trợ người dùng nếu bạn
-                        có những câu hói khác
+                        {t(Contents.FAQ_DESC)}
                     </p>
                 </div>
 
