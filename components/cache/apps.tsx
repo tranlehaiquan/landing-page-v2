@@ -80,8 +80,8 @@ const fetchApps = async (): Promise<App[]> => {
 };
 
 export const Applications = async () => {
+    // TODO : Add translations for the application names and descriptions
     const apps = await fetchApps();
-
     const renderApp = (app: App, index: number) => {
         const background = app.metadata.screenshots?.[0]?.path_full;
         if (!background) return null;
