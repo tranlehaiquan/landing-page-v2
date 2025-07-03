@@ -160,7 +160,11 @@ export const Feature = () => {
                         className="inline-flex items-center font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400"
                     >
                         {t(Contents.FEATURE_LINK)}
-                        <svg className="ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg
+                            className="ml-1 w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
                             <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
                         </svg>
                     </a>
@@ -193,12 +197,18 @@ export const SocialProof = () => {
                     </h2>
                     <div className="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
                         <div>
-                            <a href="/legal" className="inline-flex items-center text-base font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700">
+                            <a
+                                href="/legal"
+                                className="inline-flex items-center text-base font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
+                            >
                                 {t(Contents.SOCIALPROOF_LEGALITY)}
                             </a>
                         </div>
                         <div>
-                            <a href="/legal" className="inline-flex items-center text-base font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700">
+                            <a
+                                href="/legal"
+                                className="inline-flex items-center text-base font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
+                            >
                                 {t(Contents.SOCIALPROOF_TRUST)}
                             </a>
                         </div>
@@ -208,24 +218,28 @@ export const SocialProof = () => {
                     {[
                         {
                             title: t(Contents.SOCIALPROOF_1_TITLE),
-                            desc: t(Contents.SOCIALPROOF_1_DESC),
+                            desc: t(Contents.SOCIALPROOF_1_DESC)
                         },
                         {
                             title: t(Contents.SOCIALPROOF_2_TITLE),
-                            desc: t(Contents.SOCIALPROOF_2_DESC),
+                            desc: t(Contents.SOCIALPROOF_2_DESC)
                         },
                         {
                             title: t(Contents.SOCIALPROOF_3_TITLE),
-                            desc: t(Contents.SOCIALPROOF_3_DESC),
+                            desc: t(Contents.SOCIALPROOF_3_DESC)
                         },
                         {
                             title: t(Contents.SOCIALPROOF_4_TITLE),
-                            desc: t(Contents.SOCIALPROOF_4_DESC),
-                        },
+                            desc: t(Contents.SOCIALPROOF_4_DESC)
+                        }
                     ].map((item, index) => (
                         <div key={index}>
-                            <h3 className="mb-2 text-2xl font-bold dark:text-white">{item.title}</h3>
-                            <p className="font-light text-gray-500 dark:text-gray-400">{item.desc}</p>
+                            <h3 className="mb-2 text-2xl font-bold dark:text-white">
+                                {item.title}
+                            </h3>
+                            <p className="font-light text-gray-500 dark:text-gray-400">
+                                {item.desc}
+                            </p>
                         </div>
                     ))}
                 </div>
@@ -240,8 +254,16 @@ export const CTA = () => {
     return (
         <section className="bg-white dark:bg-mica mt-[128px] mb-[128px]">
             <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-                <img className="w-full dark:hidden" src="/img/macbook_empty.png" alt="demo image for thinkmay" />
-                <img className="w-full hidden dark:block" src="/img/macbook_empty.png" alt="demo image for thinkmay" />
+                <img
+                    className="w-full dark:hidden"
+                    src="/img/macbook_empty.png"
+                    alt="demo image for thinkmay"
+                />
+                <img
+                    className="w-full hidden dark:block"
+                    src="/img/macbook_empty.png"
+                    alt="demo image for thinkmay"
+                />
                 <div className="mt-4 md:mt-0">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                         {t(Contents.CTA_TITLE)}
@@ -254,7 +276,11 @@ export const CTA = () => {
                         className="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
                     >
                         {t(Contents.CTA_BUTTON)}
-                        <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg
+                            className="ml-2 -mr-1 w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
                             <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
                         </svg>
                     </a>
@@ -296,7 +322,7 @@ export const Footer = () => {
                             {[
                                 ExternalURL.facebook,
                                 ExternalURL.discord,
-                                ExternalURL.tiktok,
+                                ExternalURL.tiktok
                             ].map((url, i) => (
                                 <li key={i}>
                                     <a
@@ -305,8 +331,13 @@ export const Footer = () => {
                                         rel="noopener noreferrer"
                                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
                                     >
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="..." /> {/* Bạn thay từng icon vào nếu muốn giữ chính xác */}
+                                        <svg
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="..." />{' '}
+                                            {/* Bạn thay từng icon vào nếu muốn giữ chính xác */}
                                         </svg>
                                     </a>
                                 </li>
@@ -320,13 +351,18 @@ export const Footer = () => {
                             {t(Contents.FOOTER_COMPANY)}
                         </h2>
                         <ul className="text-gray-500 dark:text-gray-400">
-                            {['About', 'Careers', 'Brand Center', 'Blog'].map((item, i) => (
-                                <li key={i} className="mb-4">
-                                    <a href="/play/index.html?app=null&ref=landingpage" className="hover:underline">
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
+                            {['About', 'Careers', 'Brand Center', 'Blog'].map(
+                                (item, i) => (
+                                    <li key={i} className="mb-4">
+                                        <a
+                                            href="/play/index.html?app=null&ref=landingpage"
+                                            className="hover:underline"
+                                        >
+                                            {item}
+                                        </a>
+                                    </li>
+                                )
+                            )}
                         </ul>
                     </div>
 
@@ -337,22 +373,34 @@ export const Footer = () => {
                         </h2>
                         <ul className="text-gray-500 dark:text-gray-400">
                             <li className="mb-4">
-                                <a href={ExternalURL.discord} className="hover:underline">
+                                <a
+                                    href={ExternalURL.discord}
+                                    className="hover:underline"
+                                >
                                     Discord
                                 </a>
                             </li>
                             <li className="mb-4">
-                                <a href={ExternalURL.tiktok} className="hover:underline">
+                                <a
+                                    href={ExternalURL.tiktok}
+                                    className="hover:underline"
+                                >
                                     TikTok
                                 </a>
                             </li>
                             <li className="mb-4">
-                                <a href={ExternalURL.facebook} className="hover:underline">
+                                <a
+                                    href={ExternalURL.facebook}
+                                    className="hover:underline"
+                                >
                                     Facebook
                                 </a>
                             </li>
                             <li className="mb-4">
-                                <a href={ExternalURL.facebook} className="hover:underline">
+                                <a
+                                    href={ExternalURL.facebook}
+                                    className="hover:underline"
+                                >
                                     {t(Contents.FOOTER_CONTACT)}
                                 </a>
                             </li>
@@ -365,22 +413,31 @@ export const Footer = () => {
                             {t(Contents.FOOTER_LEGAL)}
                         </h2>
                         <ul className="text-gray-500 dark:text-gray-400">
-                            {['Privacy Policy', 'Licensing', 'Terms'].map((item, i) => (
-                                <li key={i} className="mb-4">
-                                    <a href="/legal" className="hover:underline">
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
+                            {['Privacy Policy', 'Licensing', 'Terms'].map(
+                                (item, i) => (
+                                    <li key={i} className="mb-4">
+                                        <a
+                                            href="/legal"
+                                            className="hover:underline"
+                                        >
+                                            {item}
+                                        </a>
+                                    </li>
+                                )
+                            )}
                         </ul>
                     </div>
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
                     © 2021–2025{' '}
-                    <a href="/play/index.html?app=null&ref=landingpage" className="hover:underline">
+                    <a
+                        href="/play/index.html?app=null&ref=landingpage"
+                        className="hover:underline"
+                    >
                         Thinkmay
-                    </a>. {t(Contents.ALL_RIGHTS_RESERVED)}
+                    </a>
+                    . {t(Contents.ALL_RIGHTS_RESERVED)}
                 </span>
             </div>
         </footer>

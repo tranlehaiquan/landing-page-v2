@@ -4,7 +4,7 @@ import withFlowbiteReact from 'flowbite-react/plugin/nextjs';
 const nextConfig: NextConfig = {
     experimental: {
         useCache: true,
-        // dynamicIO: true
+        dynamicIO: true
     }
 };
 
