@@ -43,7 +43,7 @@ const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
     const t = (key: Contents): string => {
         const langMap = translations.get(currentLanguage);
-        return langMap?.get(key) || `Missing: ${Contents[key]}`;
+        return langMap?.get(key) || `Missing: ${[key]}`;
     };
 
     return (
@@ -136,6 +136,10 @@ export const Header = ({ openLogin }: { openLogin?: () => void }) => {
         {
             url: '/faq',
             titleKey: Contents.FAQ_TITLE
+        },
+        {
+            url: '/refund/policy',
+            titleKey: Contents.REFUND_POLICY
         }
     ];
 

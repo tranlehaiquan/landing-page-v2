@@ -248,7 +248,7 @@ export default function Page() {
                         <dt className="me-2 font-medium text-gray-900 dark:text-white">
                             Amount
                         </dt>
-                        <dd>{payment.amount}k VND</dd>
+                        <dd>{payment.amount}k</dd>
                     </dl>
                     <dl className="mt-4 flex items-center text-gray-500 dark:text-gray-400">
                         <dt className="me-2 font-medium text-gray-900 dark:text-white">
