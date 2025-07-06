@@ -9,7 +9,7 @@ import {
 } from 'react';
 import { Modal } from '../popup';
 import { loggedin, logout } from '@/api/auth';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { Contents, language, Languages, Translation } from '../locales';
 
 // Language Context
@@ -24,30 +24,17 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
     undefined
 );
 
-const LANGUAGE_SUPPORT = ['VI', 'EN', 'ID'];
-
+// Language Provider
 const LanguageProvider = ({ children }: { children: ReactNode }) => {
-    const urlLang = useSearchParams().get('lang');
+    const [currentLanguage, setCurrentLanguage] = useState<Languages>('VI');
     const translations = language();
-    
-    const getInitialLanguage = (): Languages => {
-        if (urlLang && LANGUAGE_SUPPORT.includes(urlLang)) {
-            return urlLang as Languages;
-        }
-        
-        const savedLang = localStorage.getItem('language') as Languages;
-        if (savedLang && LANGUAGE_SUPPORT.includes(savedLang)) {
-            return savedLang;
-        }
-        
-        return 'VI';
-    };
-    
-    const [currentLanguage, setCurrentLanguage] = useState<Languages>(getInitialLanguage());
-    
+
     useEffect(() => {
-        setCurrentLanguage(getInitialLanguage());
-    }, [urlLang]);
+        const savedLanguage = localStorage.getItem('language') as Languages;
+        if (savedLanguage && ['VI', 'EN', 'ID'].includes(savedLanguage)) {
+            setCurrentLanguage(savedLanguage);
+        }
+    }, []);
 
     const setLanguage = (lang: Languages) => {
         setCurrentLanguage(lang);
