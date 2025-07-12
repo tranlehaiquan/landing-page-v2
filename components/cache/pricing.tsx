@@ -163,6 +163,46 @@ const Addon = {
                 <span>{value} credit dung lượng</span>
             )}
         </li>
+    ),
+    session_duration: ({ value }: { value: number }) => (
+        <li className="flex items-center space-x-3">
+            <svg
+                className="flex-shrink-0 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                <path
+                    fillRule="evenodd"
+                    d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                    clipRule="evenodd"
+                ></path>
+            </svg>
+            <span> Tối đa {value} giờ mỗi phiên chơi</span>
+        </li>
+    ),
+    allow_afk: ({ value }: { value: boolean }) => (
+        <li className="flex items-center space-x-3">
+            <svg
+                className="flex-shrink-0 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                <path
+                    fillRule="evenodd"
+                    d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                    clipRule="evenodd"
+                ></path>
+            </svg>
+            {value == true ? (
+                <span className="line-through">Không hỗ trợ treo máy </span>
+            ) : (
+                <span> Không hỗ trợ treo máy </span>
+            )}
+        </li>
     )
 };
 
@@ -180,7 +220,9 @@ const subcontents = [
             no_waiting_line: false,
             multiple_cluster: false,
             refundday: 2,
-            refundtime: 5
+            refundtime: 5,
+            session_duration: 3,
+            allow_afk: false
         }
     },
     {
@@ -196,7 +238,9 @@ const subcontents = [
             no_waiting_line: false,
             multiple_cluster: false,
             refundday: 3,
-            refundtime: 12
+            refundtime: 12,
+            session_duration: 3,
+            allow_afk: false
         }
     },
     {
@@ -212,7 +256,9 @@ const subcontents = [
             no_waiting_line: true,
             multiple_cluster: true,
             refundday: 3,
-            refundtime: 18
+            refundtime: 18,
+            session_duration: 6,
+            allow_afk: false
         }
     }
 ];
@@ -228,7 +274,7 @@ export const FetchPricing = async (): Promise<Plan[]> => {
     const { data, error } = await supabase
         .from('plans')
         .select(
-            'name, policy->size, policy->limit_hour, policy->total_days, policy->refund_days, policy->refund_usage, policy->resources->disk, policy->>title, price->amount, metadata->allow_payment, cluster_pool'
+            'name, policy->size, policy->limit_hour, policy->total_days, policy->refund_days, policy->refund_usage, policy->resources->disk, policy->>title, policy->session_duration, price->amount, metadata->allow_payment, cluster_pool'
         )
         .eq('active', true)
         .is('metadata->hide', null);
@@ -277,7 +323,12 @@ export const FetchPricing = async (): Promise<Plan[]> => {
                         .refundtime,
                 refundday:
                     Number(e.refund_days) ??
-                    subcontents.find((x) => x._name == e.name)?.bonus.refundday
+                    subcontents.find((x) => x._name == e.name)?.bonus.refundday,
+                session_duration:
+                    Number(e.session_duration) ??
+                    subcontents.find((x) => x._name == e.name)?.bonus
+                        .session_duration,
+                allow_afk: false
             }
         }));
 };

@@ -3,7 +3,7 @@
 import { info, loggedin } from '@/api/auth';
 import { createClient } from '@supabase/supabase-js';
 import { useEffect, useRef, useState } from 'react';
-import RefundPolicy_page from "./policy/page";
+import RefundPolicy_page from './policy/page';
 export default function Page() {
     const [step, setStep] = useState<string>('not_signed');
     const [refundForm, setRefundForm] = useState<any[]>([]);
@@ -64,18 +64,18 @@ export default function Page() {
 
     const [subscription, setSubscription] = useState<
         | {
-            total_usage: number;
-            last_payment: string;
-            plan_name: string;
-        }
+              total_usage: number;
+              last_payment: string;
+              plan_name: string;
+          }
         | undefined
     >(undefined);
 
     const [planPolicy, setPlanPolicy] = useState<
         | {
-            refund_days: string;
-            refund_usage: string;
-        }
+              refund_days: string;
+              refund_usage: string;
+          }
         | undefined
     >(undefined);
 
