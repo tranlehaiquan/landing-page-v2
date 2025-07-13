@@ -219,7 +219,7 @@ export function LoginModal({ action: close }: { action: () => void }) {
                             Tôi đã có tài khoản
                             <a
                                 onClick={() => setIsSignup(false)}
-                                className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500 hover:text-primary-700"
+                                className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500 hover:text-primary-700 px-2"
                             >
                                 Đăng nhập
                             </a>
@@ -229,7 +229,7 @@ export function LoginModal({ action: close }: { action: () => void }) {
                             Tôi chưa có tài khoản
                             <a
                                 onClick={() => setIsSignup(true)}
-                                className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500 hover:text-primary-700"
+                                className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500 hover:text-primary-700 px-2"
                             >
                                 Đăng kí
                             </a>

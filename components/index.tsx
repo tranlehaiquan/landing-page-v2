@@ -449,26 +449,28 @@ export const qa: [Contents, Contents][][] = [
         [Contents.FAQ_Q1, Contents.FAQ_A1],
         [Contents.FAQ_Q2, Contents.FAQ_A2],
         [Contents.FAQ_Q3, Contents.FAQ_A3],
-        [Contents.FAQ_Q4, Contents.FAQ_A4],
+        [Contents.FAQ_Q4, Contents.FAQ_A4]
     ],
     [
         [Contents.FAQ_Q5, Contents.FAQ_A5],
         [Contents.FAQ_Q6, Contents.FAQ_A6],
-        [Contents.FAQ_Q7, Contents.FAQ_A7],
+        [Contents.FAQ_Q7, Contents.FAQ_A7]
     ],
     [
         [Contents.FAQ_Q8, Contents.FAQ_A8],
         [Contents.FAQ_Q9, Contents.FAQ_A9],
         [Contents.FAQ_Q10, Contents.FAQ_A10],
-        [Contents.FAQ_Q11, Contents.FAQ_A11],
+        [Contents.FAQ_Q11, Contents.FAQ_A11]
     ]
 ];
-
 
 export const FAQ = () => {
     const { t } = useLanguage();
 
-    const renderQA = ([questionKey, answerKey]: [Contents, Contents], index: number) => (
+    const renderQA = (
+        [questionKey, answerKey]: [Contents, Contents],
+        index: number
+    ) => (
         <div key={index} className="mb-10">
             <h3 className="mb-4 text-lg font-medium text-gray-900 dark:text-white">
                 {t(questionKey)}
