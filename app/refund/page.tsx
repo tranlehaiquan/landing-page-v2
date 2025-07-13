@@ -21,7 +21,7 @@ export default function Page() {
         await supabase.rpc('create_refund_request', {
             email: info()?.email,
             form: refundForm
-        })
+        });
     };
 
     const fetch = async () => {
