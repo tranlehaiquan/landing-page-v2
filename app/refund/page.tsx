@@ -18,11 +18,9 @@ export default function Page() {
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE'
         );
 
-        await supabase.from('refund_request').insert({
-            user: info()?.email,
-            metadata: {
-                form: refundForm
-            }
+        await supabase.rpc('create_refund_request', {
+            email: info()?.email,
+            form: refundForm
         });
     };
 
