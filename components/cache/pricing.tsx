@@ -17,7 +17,7 @@ const Addon = {
     no_waiting_line: ({ value }: { value: boolean }) => (
         <li
             className={`flex items-center space-x-3 ${
-                !value ? 'text-gray-500' : ''
+                value ? 'text-gray-500' : ''
             }`}
         >
             <svg
@@ -33,15 +33,13 @@ const Addon = {
                     clipRule="evenodd"
                 ></path>
             </svg>
-            <span className={!value ? 'line-through' : ''}>
-                Không có hàng chờ
-            </span>
+            <span className={value ? 'line-through' : ''}>Có hàng chờ</span>
         </li>
     ),
     multiple_cluster: ({ value }: { value: boolean }) => (
         <li
             className={`flex items-center space-x-3 ${
-                !value ? 'text-gray-500' : ''
+                value ? 'text-gray-500' : ''
             }`}
         >
             <svg
@@ -57,8 +55,8 @@ const Addon = {
                     clipRule="evenodd"
                 ></path>
             </svg>
-            <span className={!value ? 'line-through' : ''}>
-                Luôn luôn có server backup
+            <span className={value ? 'line-through' : ''}>
+                Không có server back-up
             </span>
         </li>
     ),
@@ -99,7 +97,11 @@ const Addon = {
         </li>
     ),
     time: ({ value }: { value: number }) => (
-        <li className="flex items-center space-x-3">
+        <li
+            className={`flex items-center space-x-3 ${
+                value == 9999 ? 'text-gray-500' : ''
+            }`}
+        >
             <svg
                 className="flex-shrink-0 w-5 h-5"
                 fill="currentColor"
@@ -317,13 +319,13 @@ export const FetchPricing = async (): Promise<Plan[]> => {
                         ? true
                         : subcontents.find((x) => x._name == e.name)?.bonus
                               .multiple_cluster,
-                refundtime:
-                    Number(e.refund_usage) ??
-                    subcontents.find((x) => x._name == e.name)?.bonus
-                        .refundtime,
-                refundday:
-                    Number(e.refund_days) ??
-                    subcontents.find((x) => x._name == e.name)?.bonus.refundday,
+                // refundtime:
+                //     Number(e.refund_usage) ??
+                //     subcontents.find((x) => x._name == e.name)?.bonus
+                //         .refundtime,
+                // refundday:
+                //     Number(e.refund_days) ??
+                //     subcontents.find((x) => x._name == e.name)?.bonus.refundday,
                 session_duration:
                     Number(e.session_duration) ??
                     subcontents.find((x) => x._name == e.name)?.bonus
@@ -439,10 +441,16 @@ export const Pricing = async () => {
             <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                        Đăng kí dịch vụ Cloud PC
+                        Bảng giá dịch vụ Cloud PC
                     </h2>
                     <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
                         *chưa bao gồm tài khoản game và các nâng cấp khác
+                    </p>
+                    <p className="mb-5 italic text-gray-500 sm:text-xl dark:text-gray-400">
+                        Hỗ trợ hoàn 80% giá trị gói{' '}
+                        <a href="/refund" className="text-blue-500">
+                            (chi tiết){' '}
+                        </a>
                     </p>
                     <DomainSelection />
                 </div>
