@@ -11,6 +11,8 @@ import { Modal } from '../popup';
 import { loggedin, logout } from '@/api/auth';
 import { usePathname } from 'next/navigation';
 import { Contents, language, Languages, Translation } from '../locales';
+import { useRouter } from 'next/navigation';
+import path from 'path';
 
 // Language Context
 interface LanguageContextType {
@@ -25,30 +27,35 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 // Language Provider
-const LanguageProvider = ({ children }: { children: ReactNode }) => {
-    const [currentLanguage, setCurrentLanguage] = useState<Languages>('VI');
+const LanguageProvider = ({
+    children,
+    locale
+}: {
+    children: ReactNode;
+    locale: Languages;
+}) => {
+    const router = useRouter();
+    const pathname = usePathname();
     const translations = language();
-
-    useEffect(() => {
-        const savedLanguage = localStorage.getItem('language') as Languages;
-        if (savedLanguage && ['VI', 'EN', 'ID'].includes(savedLanguage)) {
-            setCurrentLanguage(savedLanguage);
-        }
-    }, []);
-
     const setLanguage = (lang: Languages) => {
-        setCurrentLanguage(lang);
-        localStorage.setItem('language', lang);
+        const segments = pathname.split('/');
+        segments[1] = lang;
+        router.push(segments.join('/'));
     };
 
+    useEffect(() => {
+        if (translations.get(locale) == undefined) setLanguage('en')
+        localStorage.setItem('language', locale.toUpperCase());
+    }, []);
+
     const t = (key: Contents): string => {
-        const langMap = translations.get(currentLanguage);
+        const langMap = translations.get(locale);
         return langMap?.get(key) || `Missing: ${[key]}`;
     };
 
     return (
         <LanguageContext.Provider
-            value={{ currentLanguage, setLanguage, translations, t }}
+            value={{ currentLanguage: locale, setLanguage, translations, t }}
         >
             {children}
         </LanguageContext.Provider>
@@ -67,9 +74,9 @@ const LanguageSwitcher = () => {
     const { currentLanguage, setLanguage } = useLanguage();
 
     const languageLabels: Record<Languages, string> = {
-        VI: 'VI',
-        EN: 'EN',
-        ID: 'ID'
+        vi: 'vi',
+        en: 'en',
+        id: 'id'
     };
 
     return (
@@ -91,11 +98,17 @@ const LanguageSwitcher = () => {
     );
 };
 
-export const StateProvider = ({ children }: { children: ReactNode }) => {
+export const StateProvider = ({
+    children,
+    locale
+}: {
+    children: ReactNode;
+    locale: string;
+}) => {
     const [popup, setPopup] = useState<string>('close');
 
     return (
-        <LanguageProvider>
+        <LanguageProvider locale={locale as Languages}>
             <div className="bg-white dark:bg-gray-900 text-black dark:text-white">
                 <Header openLogin={() => setPopup('login')}></Header>
                 <Modal type={popup} action={() => setPopup('close')}></Modal>

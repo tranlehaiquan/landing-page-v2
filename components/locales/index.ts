@@ -1,5 +1,5 @@
 import { Pricing } from '../cache/pricing';
-export type Languages = 'VI' | 'EN' | 'ID';
+export type Languages = 'vi' | 'en' | 'id';
 export type Translation = Map<Languages, Map<Contents, string>>;
 
 export enum Contents {
@@ -149,9 +149,9 @@ export function language(): Translation {
     const vi = new Map<Contents, string>();
     const en = new Map<Contents, string>();
     const id = new Map<Contents, string>();
-    t.set('VI', vi);
-    t.set('EN', en);
-    t.set('ID', id);
+    t.set('vi', vi);
+    t.set('en', en);
+    t.set('id', id);
 
     // Header
     vi.set(Contents.HOME_TITLE, 'Trang chủ');
