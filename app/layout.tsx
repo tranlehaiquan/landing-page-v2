@@ -21,17 +21,13 @@ export const metadata: Metadata = {
         'Work and game on cloud PC - no need to download anything, games on any devices, work from anywhere'
 };
 
-export default async function RootLayout({
-    children,
-    params
+export default function RootLayout({
+    children
 }: Readonly<{
     children: React.ReactNode;
-    params: Promise<{ locale: string }>;
 }>) {
-    const { locale } = await params;
-
     return (
-        <html lang={locale}>
+        <html lang="vi">
             <head>
                 <Script>
                     {`document.documentElement.classList.add('dark');`}
@@ -40,7 +36,7 @@ export default async function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <StateProvider locale={locale}>
+                <StateProvider>
                     {children}
                     <Footer />
                 </StateProvider>
