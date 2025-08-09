@@ -80,7 +80,7 @@ export const Header = () => {
                                 Thinkmay
                             </span>
                         </a>
-                        <div className="flex items-center lg:order-2 gap-4">
+                        <div className="flex items-center lg:order-2 gap-2">
                             <LanguageSwitcher />
                             {/* <div className="ml-2">
                                 <ThemeToggle />
@@ -88,13 +88,13 @@ export const Header = () => {
                             {loggedIn ? (
                                 <>
                                     <a
-                                        className="text-black dark:text-white hover:bg-blue-800 hover:text-white focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 mr-2 focus:outline-none cursor-pointer"
+                                        className="text-black dark:text-white hover:bg-blue-800 hover:text-white focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 focus:outline-none cursor-pointer"
                                         onClick={logout}
                                     >
                                         {t('logout')}
                                     </a>
                                     <a
-                                        className="text-white font-bold bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 cursor-pointer"
+                                        className="text-white font-bold bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 cursor-pointer"
                                         href="/play/?ref=landingpage_navplay"
                                     >
                                         {t('playNow')}
@@ -102,7 +102,7 @@ export const Header = () => {
                                 </>
                             ) : (
                                 <a
-                                    className="text-white bg-gray-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 mr-2 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 cursor-pointer"
+                                    className="text-white bg-gray-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 cursor-pointer"
                                     onClick={() => setPopup('login')}
                                 >
                                     {t('login')}

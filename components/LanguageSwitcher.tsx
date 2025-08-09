@@ -31,7 +31,7 @@ export function LanguageSwitcher() {
             <select
                 value={locale}
                 onChange={(e) => handleLanguageChange(e.target.value)}
-                className="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full px-4 py-2 lg:px-5 lg:py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
             >
                 {routing.locales.map((lng) => (
                     <option key={lng} value={lng}>
