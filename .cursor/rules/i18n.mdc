@@ -1,0 +1,28 @@
+---
+description: Locales and translation key usage in the app
+globs: components/locales/**/*.ts
+---
+
+## Locales
+
+- Translations are centralized in
+  [components/locales/index.ts](mdc:components/locales/index.ts).
+- Supported languages: `VI`, `EN`, `ID`. Keys are defined in the `Contents`
+  enum. The `language()` function returns a
+  `Map<Languages, Map<Contents, string>>`.
+
+## Usage guidelines
+
+- Import `language()` once at module level in server components or per provider
+  and pass strings down as props where possible.
+- Prefer using enum keys from `Contents` to avoid typos. Do not hardcode
+  repeated strings that exist in the locale.
+- For dynamic placeholders like `{x}` or `{y}`, interpolate at usage sites. Keep
+  placeholders in the copy, not numbers.
+
+## Adding new strings
+
+- Add a new key to `Contents` and provide translations for all supported
+  languages.
+- Keep sentences concise; avoid mixing formatting concerns with content. Use
+  Tailwind for presentation.

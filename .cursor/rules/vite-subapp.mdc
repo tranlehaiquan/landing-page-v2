@@ -1,0 +1,40 @@
+---
+description:
+    Guidance for the `webapp/` Vite subproject and its integration into the
+    Next.js site
+globs: webapp/**/*
+---
+
+## Build and output
+
+- The Vite subapp is configured with `base: '/play/'` and
+  `build.outDir: '../public/play'` (see
+  [webapp/vite.config.ts](mdc:webapp/vite.config.ts)).
+- During root builds, the subapp is compiled first, then Next.js builds. Do not
+  change output paths unless you also update links in the Next app.
+
+## Serving
+
+- Built assets are served by Next as static files from `public/play`. Access it
+  at `/play/`.
+- This bundle is independent of Next's React tree; avoid cross-bundle imports.
+
+## Tailwind and Flowbite
+
+- The subapp uses its own Tailwind setup (`tailwindcss` v3 range in
+  `webapp/package.json`). Keep it independent from root Tailwind v4.
+- `flowbite-react patch` runs as part of the subapp build to safelist classes.
+  Ensure it completes before deploying.
+
+## Dev workflow
+
+- To iterate on the subapp alone, run `npm run dev` inside `webapp/`.
+- To see it through Next, build the subapp (`npm run build` in `webapp/`) and
+  then run the root app.
+
+## Gotchas
+
+- The output directory is outside the Vite project root; Vite warns it won't be
+  emptied. Use `--emptyOutDir` if you need to clear it, but ensure you don't
+  delete unrelated files in `public/play` accidentally.
+- Avoid absolute imports from the root project inside `webapp/`.

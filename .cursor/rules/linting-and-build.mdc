@@ -1,0 +1,28 @@
+---
+description: Build, lint, and CI notes specific to this repo
+alwaysApply: true
+---
+
+## Root build
+
+- `pnpm build`/`npm run build` will:
+    1. install and build `webapp/`
+    2. run `next build`
+
+## Flowbite patching
+
+- `flowbite-react patch` runs during postinstall and in the subapp build. It
+  generates `.flowbite-react/class-list.json` used for Tailwind class
+  safelisting.
+- If classes seem missing in production, re-run the patch or `npm run build`.
+
+## ESLint
+
+- Next’s build may attempt to run ESLint. If ESLint is not installed, builds can
+  warn/fail. Either install ESLint or disable lint during builds if necessary.
+
+## Vite output warning
+
+- Vite warns that `outDir` is outside project root and won’t be emptied. If you
+  need a clean slate, run `vite build --emptyOutDir` within `webapp/`. Be
+  cautious not to delete unrelated files in `public/play`.

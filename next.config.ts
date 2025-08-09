@@ -1,11 +1,12 @@
 import type { NextConfig } from 'next';
-import withFlowbiteReact from 'flowbite-react/plugin/nextjs';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
     experimental: {
-        useCache: true,
-        dynamicIO: true
+        useCache: true
     }
 };
 
-export default withFlowbiteReact(nextConfig);
+export default withNextIntl(nextConfig);

@@ -1,0 +1,48 @@
+---
+globs: app/**/*.tsx,components/**/*.tsx
+description:
+    Conventions and gotchas for the Next.js App Router and Tailwind v4 in this
+    repo
+---
+
+## Next.js App Router conventions
+
+- Prefer Server Components by default. Use `"use client"` only when needed
+  (stateful UI, event handlers, browser APIs).
+- Wrap pages within the global providers declared in `app/layout.tsx`. Do not
+  rewrap providers per route unless necessary.
+- Use `next/script` for third-party scripts. In `app/layout.tsx` we use
+  `strategy="afterInteractive"` for GA.
+- Metadata: export `metadata` from page/layout when SEO is needed. Default site
+  metadata is in `app/layout.tsx`.
+
+## Dark mode
+
+- Tailwind `darkMode: 'class'` is set in the root config. The `dark` class is
+  added to `<html>` via a layout script.
+- Avoid toggling `dark` in individual components unless adding a theme switcher.
+  Respect the global class.
+
+## Tailwind v4 guidance
+
+- Tailwind config is minimal, with extended `primary` colors and fonts. Use
+  semantic classes; avoid custom CSS where utilities suffice.
+- Use class names supported by Flowbite React components. The
+  `.flowbite-react/class-list.json` is generated during patching to safelist
+  classes.
+- If Tailwind classes purge unexpectedly, ensure Flowbite patch has run and
+  `.flowbite-react` files exist.
+
+## Flowbite React usage
+
+- Components come from `flowbite-react`. Ensure styles are available via
+  Tailwind utilities.
+- For Next.js SSR, rely on the plugin wrapper in `next.config.ts`
+  (`withFlowbiteReact`). Do not import Flowbite CSS separately.
+
+## Performance
+
+- Keep shared client bundles small. Favor server components and dynamic imports
+  for heavy client-only modules.
+- Use Next Image when handling remote images; local static assets under
+  `public/` can be referenced with `/path`.

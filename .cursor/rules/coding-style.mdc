@@ -1,0 +1,30 @@
+---
+alwaysApply: true
+---
+
+## TypeScript & React style
+
+- Prefer explicit function signatures for exported functions and components.
+- Use descriptive names; avoid 1–2 character identifiers.
+- Use early returns and guard clauses to avoid deep nesting.
+- Keep components small and focused. Extract UI fragments into smaller
+  components when they grow.
+
+## Client vs Server components
+
+- Default to Server Components. Add `"use client"` only for interactive
+  components.
+- When using client components, colocate browser-only logic (event handlers,
+  effects) there.
+
+## Formatting
+
+- Use Prettier (configured via scripts). Avoid reformatting unrelated code in
+  edits.
+- Keep lines reasonably short and readable. Favor multiline over complex
+  one-liners.
+
+## Comments
+
+- Add comments only for non-obvious logic and to explain "why". Avoid inline
+  explanatory comments inside JSX.

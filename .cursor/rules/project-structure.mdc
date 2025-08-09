@@ -1,0 +1,61 @@
+---
+alwaysApply: true
+---
+
+## Project overview
+
+- The repository hosts a Next.js App Router site and a separate Vite subapp
+  bundled into static assets.
+
+### Entry points
+
+- Next.js app root: `app/` with global layout in
+  [app/layout.tsx](mdc:app/layout.tsx)
+- Next.js config: [next.config.ts](mdc:next.config.ts) (Flowbite React plugin
+  enabled, Next 15 app router with experimental flags)
+- Vite subapp: `webapp/` with build output configured to
+  [public/play](mdc:public/play)
+- Tailwind: Root Tailwind v4 config at
+  [tailwind.config.js](mdc:tailwind.config.js)
+
+### Build and dev
+
+- Root scripts in [package.json](mdc:package.json)
+    - `dev`: runs `next dev --turbopack` and builds the Vite subapp once
+    - `build`: builds Vite subapp (outputs to `public/play`) then runs
+      `next build`
+    - `start`: `next start` for production
+- Vite subapp scripts in [webapp/package.json](mdc:webapp/package.json)
+    - `build`: `vite build` with base `/play/` and outDir `../public/play` per
+      [webapp/vite.config.ts](mdc:webapp/vite.config.ts)
+
+### Routing and static assets
+
+- Next.js pages live under `app/*/page.tsx`
+- Vite bundle is served at `/play/` from `public/play` and is independent of the
+  Next.js React tree
+- All static assets are under `public/` and available at `/<path>`
+
+### Global wrappers and scripts
+
+- Global wrappers added in [app/layout.tsx](mdc:app/layout.tsx):
+  `StateProvider`, `Footer`, and Google Analytics via `next/script`
+- Dark mode is forced by adding the `dark` class to `documentElement`
+
+### Flowbite React integration
+
+- Flowbite React Next.js plugin is applied in
+  [next.config.ts](mdc:next.config.ts)
+- A `postinstall` hook and other scripts invoke `flowbite-react patch` which
+  generates `.flowbite-react/class-list.json` used for Tailwind class
+  safelisting
+    - Config files live in
+      [.flowbite-react/config.json](mdc:.flowbite-react/config.json)
+    - Generated class list at
+      [.flowbite-react/class-list.json](mdc:.flowbite-react/class-list.json)
+
+### Internationalization
+
+- Translation keys and maps live in
+  [components/locales/index.ts](mdc:components/locales/index.ts)
+- Supported languages: `VI`, `EN`, `ID`
