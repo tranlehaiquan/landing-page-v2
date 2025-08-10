@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
+import screenshot from '@/public/img/screenshoot_store.png';
 
 export { LanguageSwitcher } from './LanguageSwitcher';
 export { Header } from './Header';
@@ -62,17 +63,13 @@ export const Hero = () => {
                 </div>
                 <Image
                     className="mx-auto mb-5 lg:mb-8 border border-gray-200 rounded-lg shadow-xl dark:border-gray-600 z-1 dark:hidden"
-                    src="/img/screenshoot_store.png"
+                    src={screenshot}
                     alt="demo image for thinkmay"
-                    width={800}
-                    height={600}
                 />
                 <Image
                     className="mx-auto mb-5 lg:mb-8 border border-gray-200 rounded-lg shadow-xl dark:border-gray-600 hidden dark:block z-1"
-                    src="/img/screenshoot_store.png"
+                    src={screenshot}
                     alt="demo image for thinkmay"
-                    width={800}
-                    height={600}
                 />
             </div>
             <div className="pt-48 lg:pb-16 pb-8 -mt-48 bg-gray-50 sm:pt-80 sm:-mt-80 dark:bg-gray-800 z-2">

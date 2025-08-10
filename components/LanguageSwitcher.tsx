@@ -23,10 +23,11 @@ export function LanguageSwitcher() {
     const languages: LanguageOption[] = [
         { code: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
         { code: 'en', label: 'English', flag: '🇺🇸' },
-        { code: 'id', label: 'Bahasa Indonesia', flag: '🇮🇩' },
+        { code: 'id', label: 'Bahasa Indonesia', flag: '🇮🇩' }
     ];
 
-    const currentLanguage = languages.find(lang => lang.code === locale) || languages[0];
+    const currentLanguage =
+        languages.find((lang) => lang.code === locale) || languages[0];
 
     const handleLanguageChange = (newLocale: string) => {
         // Skip navigation if the locale is the same
@@ -46,13 +47,17 @@ export function LanguageSwitcher() {
     // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target as Node)
+            ) {
                 setIsOpen(false);
             }
         };
 
         document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
+        return () =>
+            document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
     // Close dropdown on escape key
@@ -76,15 +81,24 @@ export function LanguageSwitcher() {
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-primary-400 min-w-[140px]"
             >
                 <span className="text-lg">{currentLanguage.flag}</span>
-                <span className="hidden sm:inline">{currentLanguage.label}</span>
-                <span className="sm:hidden">{currentLanguage.code.toUpperCase()}</span>
+                <span className="hidden sm:inline">
+                    {currentLanguage.label}
+                </span>
+                <span className="sm:hidden">
+                    {currentLanguage.code.toUpperCase()}
+                </span>
                 <svg
                     className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                 >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                    />
                 </svg>
             </button>
 
@@ -94,7 +108,9 @@ export function LanguageSwitcher() {
                         {languages.map((language) => (
                             <button
                                 key={language.code}
-                                onClick={() => handleLanguageChange(language.code)}
+                                onClick={() =>
+                                    handleLanguageChange(language.code)
+                                }
                                 className={`w-full flex items-center gap-3 px-4 py-3 text-sm text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150 ${
                                     language.code === locale
                                         ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-300'
@@ -102,7 +118,9 @@ export function LanguageSwitcher() {
                                 }`}
                             >
                                 <span className="text-lg">{language.flag}</span>
-                                <span className="font-medium">{language.label}</span>
+                                <span className="font-medium">
+                                    {language.label}
+                                </span>
                                 {language.code === locale && (
                                     <svg
                                         className="w-4 h-4 ml-auto text-primary-600 dark:text-primary-400"
