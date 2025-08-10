@@ -50,14 +50,15 @@ export const Header = () => {
     ];
 
     const renderRoute = (item: Route, index: number) => {
-        const isActive = item.url === '/' ? route === item.url : route.includes(item.url);
-        
+        const isActive =
+            item.url === '/' ? route === item.url : route.includes(item.url);
+
         return (
             <li key={item.url}>
                 <Link
                     href={item.url}
                     className={`block py-2 pr-4 pl-3 border-b border-gray-100 ${isActive ? 'text-primary-600' : ''} hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-400 lg:p-0 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-primary-500 lg:dark:hover:bg-transparent dark:border-gray-700`}
-                    aria-current={isActive ? "page" : undefined}
+                    aria-current={isActive ? 'page' : undefined}
                 >
                     {t(item.titleKey)}
                 </Link>
