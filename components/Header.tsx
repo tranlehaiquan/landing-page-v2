@@ -19,12 +19,12 @@ export const Header = () => {
     useEffect(() => {
         // Set initial state
         setLoggedIn(loggedin());
-        
+
         // Subscribe to auth changes
         const unsubscribe = onAuthChange((isValid) => {
             setLoggedIn(isValid);
         });
-        
+
         // Cleanup subscription on unmount
         return unsubscribe;
     }, []);
