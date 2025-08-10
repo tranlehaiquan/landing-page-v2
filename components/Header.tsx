@@ -135,8 +135,8 @@ export const Header = () => {
                             >
                                 <span className="sr-only">
                                     {isMenuOpen
-                                        ? 'Close main menu'
-                                        : 'Open main menu'}
+                                        ? t('closeMenu')
+                                        : t('openMenu')}
                                 </span>
                                 <svg
                                     className={`w-6 h-6 ${isMenuOpen ? 'hidden' : 'block'}`}
@@ -175,10 +175,11 @@ export const Header = () => {
                     </div>
                 </nav>
 
-                <button
-                    onClick={() => {
-                        window.location.href = 'https://fb.com/thinkonmay';
-                    }}
+                <a
+                    href="https://fb.com/thinkonmay"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Thinkmay Facebook page (opens in new tab)"
                     className="fixed bottom-8 right-7 bg-primary-700 rounded-full p-4 flex items-center justify-center cursor-pointer hover:bg-primary-600"
                 >
                     <svg
@@ -201,7 +202,7 @@ export const Header = () => {
                             clipRule="evenodd"
                         />
                     </svg>
-                </button>
+                </a>
             </header>
             <Modal type={popup} action={() => setPopup('close')} />
         </>

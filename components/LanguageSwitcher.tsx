@@ -3,11 +3,11 @@
 import { useRouter, usePathname } from '@/i18n/routing';
 import { useSearchParams } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
-import { routing } from '@/i18n/routing';
+import { Locale } from '@/i18n/config';
 import { useState, useRef, useEffect } from 'react';
 
 interface LanguageOption {
-    code: string;
+    code: Locale;
     label: string;
     flag: string;
 }
@@ -16,21 +16,21 @@ export function LanguageSwitcher() {
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
-    const locale = useLocale();
+    const locale = useLocale() as Locale;
     const t = useTranslations('Common');
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     const languages: LanguageOption[] = [
-        { code: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
-        { code: 'en', label: 'English', flag: '🇺🇸' },
-        { code: 'id', label: 'Bahasa Indonesia', flag: '🇮🇩' }
+        { code: 'vi' as Locale, label: 'Tiếng Việt', flag: '🇻🇳' },
+        { code: 'en' as Locale, label: 'English', flag: '🇺🇸' },
+        { code: 'id' as Locale, label: 'Bahasa Indonesia', flag: '🇮🇩' }
     ];
 
     const currentLanguage =
         languages.find((lang) => lang.code === locale) || languages[0];
 
-    const handleLanguageChange = (newLocale: string) => {
+    const handleLanguageChange = (newLocale: Locale) => {
         // Skip navigation if the locale is the same
         if (newLocale === locale) {
             setIsOpen(false);

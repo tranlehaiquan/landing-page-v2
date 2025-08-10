@@ -1,20 +1,23 @@
 {
-  "Common": {
-    "toggleTheme": "Ganti tema"
-  },
-      "Metadata": {
-    "title": "Thinkmay Cloud PC - Main Game di Cloud",
-    "description": "Bekerja dan bermain game di Cloud PC - tidak perlu mengunduh apapun, main game di semua perangkat, bekerja dari mana saja"
-  },
-  "Header": {
-    "homeTitle": "Beranda",
-    "pricingTitle": "Harga",
-    "faqTitle": "FAQ",
-    "logout": "Keluar",
-    "playNow": "Main Sekarang",
-    "login": "Masuk",
-    "refundPolicy": "Kebijakan Pengembalian Dana"
-  },
+    "Common": {
+        "toggleTheme": "Ganti tema",
+        "selectLanguage": "Pilih bahasa"
+    },
+    "Metadata": {
+        "title": "Thinkmay Cloud PC - Main Game di Cloud",
+        "description": "Bekerja dan bermain game di Cloud PC - tidak perlu mengunduh apapun, main game di semua perangkat, bekerja dari mana saja"
+    },
+    "Header": {
+        "homeTitle": "Beranda",
+        "pricingTitle": "Harga",
+        "faqTitle": "FAQ",
+        "logout": "Keluar",
+        "playNow": "Main Sekarang",
+        "login": "Masuk",
+        "refundPolicy": "Kebijakan Pengembalian Dana",
+        "openMenu": "Buka menu utama",
+        "closeMenu": "Tutup menu utama"
+    },
     "Hero": {
         "title": "Thinkmay CloudPC - Main Game di Cloud",
         "description1": "Konfigurasi RTX 3060Ti, 16GB RAM",
@@ -156,9 +159,5 @@
         "alreadyHaveAccount": "Saya sudah memiliki akun",
         "dontHaveAccount": "Saya belum memiliki akun",
         "emailValidationError": "Email harus memiliki @gmail.com"
-    },
-    "Common": {
-        "toggleTheme": "Ganti tema",
-        "selectLanguage": "Pilih bahasa"
     }
 }

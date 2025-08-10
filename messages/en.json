@@ -1,20 +1,23 @@
 {
-  "Common": {
-    "toggleTheme": "Toggle theme"
-  },
-      "Metadata": {
-    "title": "Thinkmay Cloud PC - Play Games on Cloud",
-    "description": "Work and game on Cloud PC - no need to download anything, games on any devices, work from anywhere"
-  },
-  "Header": {
-    "homeTitle": "Home",
-    "pricingTitle": "Pricing",
-    "faqTitle": "FAQ",
-    "logout": "Logout",
-    "playNow": "Play Now",
-    "login": "Login",
-    "refundPolicy": "Refund Policy"
-  },
+    "Common": {
+        "toggleTheme": "Toggle theme",
+        "selectLanguage": "Select language"
+    },
+    "Metadata": {
+        "title": "Thinkmay Cloud PC - Play Games on Cloud",
+        "description": "Work and game on Cloud PC - no need to download anything, games on any devices, work from anywhere"
+    },
+    "Header": {
+        "homeTitle": "Home",
+        "pricingTitle": "Pricing",
+        "faqTitle": "FAQ",
+        "logout": "Logout",
+        "playNow": "Play Now",
+        "login": "Login",
+        "refundPolicy": "Refund Policy",
+        "openMenu": "Open main menu",
+        "closeMenu": "Close main menu"
+    },
     "Hero": {
         "title": "Thinkmay CloudPC - Play Games on Cloud",
         "description1": "RTX 3060Ti, 16GB RAM Configuration",
@@ -156,9 +159,5 @@
         "alreadyHaveAccount": "I already have an account",
         "dontHaveAccount": "I don't have an account",
         "emailValidationError": "Email must have @gmail.com"
-    },
-    "Common": {
-        "toggleTheme": "Toggle theme",
-        "selectLanguage": "Select language"
     }
 }

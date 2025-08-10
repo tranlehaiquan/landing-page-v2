@@ -1,20 +1,23 @@
 {
-  "Common": {
-    "toggleTheme": "Chuyển đổi chủ đề"
-  },
-      "Metadata": {
-    "title": "Thinkmay Cloud PC - chơi game trên mây",
-    "description": "Làm việc và chơi game trên Cloud PC - không cần tải xuống, chơi game trên mọi thiết bị, làm việc từ mọi nơi"
-  },
-  "Header": {
-    "homeTitle": "Trang chủ",
-    "pricingTitle": "Mức giá",
-    "faqTitle": "Câu hỏi thường gặp",
-    "logout": "Đăng xuất",
-    "playNow": "Chơi ngay",
-    "login": "Đăng nhập",
-    "refundPolicy": "Chính sách hoàn tiền"
-  },
+    "Common": {
+        "toggleTheme": "Chuyển đổi chủ đề",
+        "selectLanguage": "Chọn ngôn ngữ"
+    },
+    "Metadata": {
+        "title": "Thinkmay Cloud PC - chơi game trên mây",
+        "description": "Làm việc và chơi game trên Cloud PC - không cần tải xuống, chơi game trên mọi thiết bị, làm việc từ mọi nơi"
+    },
+    "Header": {
+        "homeTitle": "Trang chủ",
+        "pricingTitle": "Mức giá",
+        "faqTitle": "Câu hỏi thường gặp",
+        "logout": "Đăng xuất",
+        "playNow": "Chơi ngay",
+        "login": "Đăng nhập",
+        "refundPolicy": "Chính sách hoàn tiền",
+        "openMenu": "Mở menu chính",
+        "closeMenu": "Đóng menu chính"
+    },
     "Hero": {
         "title": "Thinkmay CloudPC - chơi game trên mây",
         "description1": "Cấu hình RTX 3060Ti, 16GB RAM",
@@ -156,9 +159,5 @@
         "alreadyHaveAccount": "Tôi đã có tài khoản",
         "dontHaveAccount": "Tôi chưa có tài khoản",
         "emailValidationError": "Email phải có @gmail.com"
-    },
-    "Common": {
-        "toggleTheme": "Chuyển đổi chủ đề",
-        "selectLanguage": "Chọn ngôn ngữ"
     }
 }
