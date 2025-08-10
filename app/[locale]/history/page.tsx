@@ -1,6 +1,8 @@
 'use client';
 import { info, loggedin } from '@/api/auth';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createSupabaseClient } from '@/utils/supabase';
+import { SupabaseClient } from '@supabase/supabase-js';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 export type PlanName =
@@ -49,12 +51,7 @@ export default function Page() {
     const [depositHistory, setDepositHistory] = useState<Deposit[]>([]);
 
     useEffect(() => {
-        setSupabase(
-            createClient(
-                'https://play.2.thinkmay.net:445',
-                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE'
-            )
-        );
+        setSupabase(createSupabaseClient());
 
         const i = setInterval(() => {
             const loggedIn = loggedin();
@@ -295,10 +292,12 @@ export default function Page() {
                             <span className="sr-only">Open user menu</span>
                             <div className="flex w-full items-center justify-between">
                                 <div className="flex items-center">
-                                    <img
+                                    <Image
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                                         className="mr-3 h-8 w-8 rounded-md"
                                         alt="Bonnie avatar"
+                                        width={32}
+                                        height={32}
                                     />
                                     <div className="text-left">
                                         <div className="mb-0.5 font-semibold leading-none text-gray-900 dark:text-white">
@@ -337,10 +336,12 @@ export default function Page() {
                                 href="#"
                                 className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                             >
-                                <img
+                                <Image
                                     src="/img/logo.png"
                                     className="mr-3 h-8 w-8 rounded"
                                     alt="Michael avatar"
+                                    width={32}
+                                    height={32}
                                 />
                                 <div className="text-left">
                                     <div className="mb-0.5 font-semibold leading-none text-gray-900 dark:text-white">

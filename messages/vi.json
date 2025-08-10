@@ -1,0 +1,163 @@
+{
+    "Common": {
+        "toggleTheme": "Chuyển đổi chủ đề",
+        "selectLanguage": "Chọn ngôn ngữ"
+    },
+    "Metadata": {
+        "title": "Thinkmay Cloud PC - chơi game trên mây",
+        "description": "Làm việc và chơi game trên Cloud PC - không cần tải xuống, chơi game trên mọi thiết bị, làm việc từ mọi nơi"
+    },
+    "Header": {
+        "homeTitle": "Trang chủ",
+        "pricingTitle": "Mức giá",
+        "faqTitle": "Câu hỏi thường gặp",
+        "logout": "Đăng xuất",
+        "playNow": "Chơi ngay",
+        "login": "Đăng nhập",
+        "refundPolicy": "Chính sách hoàn tiền",
+        "openMenu": "Mở menu chính",
+        "closeMenu": "Đóng menu chính"
+    },
+    "Hero": {
+        "title": "Thinkmay CloudPC - chơi game trên mây",
+        "description1": "Cấu hình RTX 3060Ti, 16GB RAM",
+        "description2": "Chơi tất cả các game cấu hình cao, đồ họa đẹp trên mọi thiết bị, chỉ với kết nối internet",
+        "description3": "Sử dụng hoàn toàn trên trình duyệt",
+        "button": "Sử dụng ngay"
+    },
+    "Feature": {
+        "title": "Tương lai của chơi game là chơi game trên \"mây\"",
+        "description": "Tại sao phải mua gaming PC trong khi bạn có thể chơi game...",
+        "feature1Title": "Mọi lúc, mọi nơi, mọi thiết bị",
+        "feature1Description": "Từ từ đã, cái gì, chơi game AAA trên điện thoại và laptop á?\nThế bây giờ ngồi cafe, nằm trên giường cũng chơi được game AAA?",
+        "feature2Title": "Không chờ đợi, bật là chơi, tối ưu từ A-Z",
+        "feature2Description": "Lại còn có game được tải sẵn luôn? Không cần phải đi mày mò cài Việt Hóa?\nXong rồi cũng không cần phải đi mày mò setting, tất cả đã được tối ưu sẵn?",
+        "link": "Tìm hiểu sâu hơn về CloudPC"
+    },
+    "SocialProof": {
+        "title": "Sản phẩm được tin dùng",
+        "subtitle": "Thinkmay CloudPC đã có 60k++ người sử dụng",
+        "legality": "Xem hướng dẫn pháp lý",
+        "trust": "Thăm Trung tâm Tin cậy",
+        "infrastructure": {
+            "title": "Hạ tầng luôn sẵn sàng",
+            "description": "Server ổn định, độ trễ đạt dưới 100ms, kết nối nhanh chóng"
+        },
+        "users": {
+            "title": "60K+ người dùng",
+            "description": "Đã có hơn 60 ngàn người đăng kí dịch vụ"
+        },
+        "coverage": {
+            "title": "Độ phủ rộng",
+            "description": "Thinkmay CloudPC có hệ thống server ở cả miền bắc và miền nam"
+        },
+        "guarantee": {
+            "title": "Cam kết hoàn tiền",
+            "description": "Lên tới 5 ngày đầu tiên, nếu sản phẩm không đáp ứng được yêu cầu."
+        }
+    },
+    "CTA": {
+        "title": "Bắt đầu sử dụng Thinkmay CloudPC ngay bây giờ",
+        "description": "Hoặc nhắn tin hỗ trợ để được trải nghiệm miễn phí",
+        "button": "Sử dụng ngay"
+    },
+    "Applications": {
+        "title": "Những game được chơi nhiều trên Thinkmay",
+        "description": "Thinkmay CloudPC sở hữu kho game đa dạng và phong phú,\nngoài ra bạn còn có thể tự tải những tựa game mà mình yêu thích, hoặc cài đặt thêm các bản mod, tùy biến",
+        "description1": "Thinkmay CloudPC sở hữu kho game đa dạng và phong phú,",
+        "description2": "ngoài ra bạn còn có thể tự tải những tựa game mà mình yêu thích, hoặc cài đặt thêm các bản mod, tùy biến",
+        "tagNew": "Game mới",
+        "buttonPlay": "Chơi ngay",
+        "buttonSupport": "Nhà phát hành"
+    },
+    "Footer": {
+        "description": "Thinkmay CloudPC giúp bạn chơi game trên mọi thiết bị mà không cần cài đặt",
+        "company": "Công ty",
+        "help": "Trung tâm trợ giúp",
+        "contact": "Liên hệ",
+        "legal": "Pháp lý",
+        "allRightsReserved": "Đã đăng ký bản quyền."
+    },
+    "FAQ": {
+        "title": "Những câu hỏi thường gặp",
+        "description": "Bạn có thể nhắn tin trong phần hỗ trợ người dùng nếu bạn có những câu hỏi khác",
+        "questions": {
+            "q1": "Thinkmay Cloud PC là gì?",
+            "a1": "Thinkmay Cloud PC là một dịch vụ máy tính cá nhân ảo được cung cấp qua đám mây...",
+            "q2": "Tôi có thể cài đặt các phần mềm trên Thinkmay Cloud PC không?",
+            "a2": "Có, bạn hoàn toàn có thể cài đặt và sử dụng các phần mềm trên Thinkmay Cloud PC giống như máy tính thông thường...",
+            "q3": "Các thiết bị nào thì dùng được Cloud PC? Tôi có cần đầu tư thiết bị gì không?",
+            "a3": "Mọi thiết bị thông minh với kết nối Internet đều có thể sử dụng Cloud PC...",
+            "q4": "Trên Thinkmay có thể chơi những game nào?",
+            "a4": "Hầu hết các game đều chơi được trên Thinkmay, trừ một số game online như LOL, PUBG, Valorant...",
+            "q5": "Có được chơi thử không? Chơi thử như thế nào?",
+            "a5": "Bạn có thể truy cập website và liên hệ hỗ trợ để yêu cầu chơi thử hoặc đăng ký demo...",
+            "q6": "Mất bao lâu sau khi thanh toán thì tôi có thể sử dụng Thinkmay CloudPC?",
+            "a6": "Hệ thống xác nhận tự động, thông thường chỉ mất 3–5 phút sau khi thanh toán thành công...",
+            "q7": "Chính sách hoàn tiền của Thinkmay nếu người dùng gặp lỗi là gì?",
+            "a7": "Thinkmay hỗ trợ hoàn tiền tối đa 80%, trong vòng 5 ngày và 3 giờ chơi đầu tiên nếu lỗi từ phía Thinkmay...",
+            "q8": "Tôi phải làm gì nếu gặp lỗi và bị giật/lag?",
+            "a8": "Kiểm tra lại kết nối mạng. Nếu được, hãy dùng cáp Ethernet thay vì Wi-Fi để giảm độ trễ...",
+            "q9": "Làm sao để tối ưu đường truyền mạng?",
+            "a9": "Hãy chọn máy chủ gần vị trí của bạn nhất để giảm độ trễ và tăng hiệu suất...",
+            "q10": "Làm sao để tối ưu fps trong game?",
+            "a10": "Hãy giảm cấu hình đồ họa và tắt các hiệu ứng không cần thiết trong game...",
+            "q11": "Làm sao nếu tất cả các cách trên đều không giải quyết được vấn đề?",
+            "a11": "Cuối cùng, hãy liên hệ bộ phận hỗ trợ của Thinkmay để được kiểm tra lại hệ thống..."
+        }
+    },
+    "Pricing": {
+        "noWaitingLine": "Không có hàng chờ",
+        "multipleCluster": "Luôn luôn có server backup",
+        "timeUnlimited": "Giới hạn giờ chơi",
+        "storageLimitNone": "Giới hạn dung lượng tối đa",
+        "refundDay": "Hoàn tiền trong",
+        "refundTime": "Hoàn tiền trong",
+        "timeLimit": "Tối đa",
+        "storageLimit": "Giới hạn tối đa",
+        "suffixes": {
+            "day": "ngày đầu",
+            "hourPlay": "h chơi đầu",
+            "hourUsage": "h chơi",
+            "storage": "GB dung lượng",
+            "storageCredit": "credit dung lượng"
+        }
+    },
+    "Refund": {
+        "policy": "Chính sách hoàn tiền",
+        "contactUs": "Cần hỗ trợ? Liên hệ chúng tôi",
+        "description": "Thinkmay cam kết mang đến trải nghiệm dịch vụ CloudPC tốt nhất. Trong trường hợp bạn cảm thấy không hài lòng vì bất kỳ lý do nào, chúng tôi sẵn sàng hỗ trợ và hoàn lại 80% tiền theo các điều kiện sau:",
+        "packages": {
+            "package499K": "Gói 499K",
+            "package299K": "Gói 299K",
+            "package199K": "Gói 199K"
+        },
+        "requestTime": "Thời gian yêu cầu: Trong vòng {x} ngày kể từ khi được cấp máy.",
+        "totalUsage": "Tổng thời gian sử dụng: dưới {y} giờ.",
+        "processTitle": "Quy trình yêu cầu hoàn tiền:",
+        "steps": {
+            "step1": "Liên hệ qua Fanpage chính thức.",
+            "step2": "Cung cấp thông tin tài khoản và lý do yêu cầu hoàn tiền.",
+            "step3": "Yêu cầu sẽ được xử lý trong vòng 2 ngày làm việc."
+        },
+        "note": "Lưu ý: Chính sách không áp dụng cho các trường hợp vi phạm điều khoản sử dụng dịch vụ hoặc cố ý gây lỗi. Vui lòng trải nghiệm dịch vụ miễn phí trước khi đưa ra quyết định mua!"
+    },
+    "Auth": {
+        "loginTitle": "Đăng nhập Thinkmay",
+        "loginButton": "Đăng nhập",
+        "signupButton": "Đăng ký",
+        "emailLabel": "Email",
+        "emailPlaceholder": "name@gmail.com",
+        "passwordLabel": "Mật khẩu",
+        "passwordPlaceholder": "••••••••",
+        "repeatPasswordLabel": "Nhập lại mật khẩu",
+        "googleLogin": "Google",
+        "termsAgreement1": "Tôi đồng ý với tất cả",
+        "termsAgreement2": "và",
+        "termsLink": "Điều khoản",
+        "privacyPolicyLink": "Chính sách bảo mật",
+        "alreadyHaveAccount": "Tôi đã có tài khoản",
+        "dontHaveAccount": "Tôi chưa có tài khoản",
+        "emailValidationError": "Email phải có @gmail.com"
+    }
+}

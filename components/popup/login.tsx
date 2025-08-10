@@ -1,8 +1,10 @@
 'use client';
 import { POCKETBASE } from '@/api';
 import { login } from '@/api/auth';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export const loginWithEmail = (email: string, password: string) => {
     return POCKETBASE().collection('users').authWithPassword(email, password);
@@ -21,6 +23,7 @@ export const signUpWithEmail = async (
 };
 
 export function LoginModal({ action: close }: { action: () => void }) {
+    const t = useTranslations('Auth');
     const params = useSearchParams();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -63,22 +66,23 @@ export function LoginModal({ action: close }: { action: () => void }) {
             <div className="relative p-4 w-full max-w-lg h-full md:h-auto overflow-y-auto overflow-x-hidden">
                 <div className="relative p-4 bg-white rounded-lg shadow dark:bg-gray-900 md:p-6 ">
                     <div className="flex items-center mb-2">
-                        <a
-                            href="#"
-                            className="flex items-center text-xl font-semibold text-gray-900 dark:text-white"
-                        >
-                            <img
-                                src="logo_white.png"
+                        <button className="flex items-center text-xl font-semibold text-gray-900 dark:text-white">
+                            <Image
+                                src="/image/logo_white.png"
                                 className="h-12 mr-4 hidden dark:hidden"
                                 alt="thinkmay logo"
-                            ></img>
-                            <img
-                                src="logo.png"
+                                width={48}
+                                height={48}
+                            />
+                            <Image
+                                src="/image/logo.png"
                                 className="h-12 mr-4 dark:hidden"
                                 alt="thinkmay logo"
-                            ></img>
-                            Đăng nhập Thinkmay
-                        </a>
+                                width={48}
+                                height={48}
+                            />
+                            {t('loginTitle')}
+                        </button>
                     </div>
                     <div className="flex items-center mb-2 space-x-4 ">
                         <a
@@ -108,7 +112,7 @@ export function LoginModal({ action: close }: { action: () => void }) {
                                     fill="#EB4335"
                                 />
                             </svg>
-                            Google
+                            {t('googleLogin')}
                         </a>
                     </div>
                     <div className="mb-2">
@@ -116,14 +120,14 @@ export function LoginModal({ action: close }: { action: () => void }) {
                             htmlFor="email"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                         >
-                            Email
+                            {t('emailLabel')}
                         </label>
                         <input
                             type="email"
                             name="email"
                             id="email"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            placeholder="name@gmail.com"
+                            placeholder={t('emailPlaceholder')}
                             required
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
@@ -134,13 +138,13 @@ export function LoginModal({ action: close }: { action: () => void }) {
                             htmlFor="password"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                         >
-                            Password
+                            {t('passwordLabel')}
                         </label>
                         <input
                             type="password"
                             name="password"
                             id="password"
-                            placeholder="••••••••"
+                            placeholder={t('passwordPlaceholder')}
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                             required
                             value={password}
@@ -154,13 +158,13 @@ export function LoginModal({ action: close }: { action: () => void }) {
                                     htmlFor="password-confirm"
                                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                 >
-                                    Repeat Password
+                                    {t('repeatPasswordLabel')}
                                 </label>
                                 <input
                                     type="password"
                                     name="password"
                                     id="password"
-                                    placeholder="••••••••"
+                                    placeholder={t('passwordPlaceholder')}
                                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                     required
                                     value={passwordConfirm}
@@ -183,19 +187,19 @@ export function LoginModal({ action: close }: { action: () => void }) {
                                         htmlFor="terms"
                                         className="text-gray-500 dark:text-gray-400"
                                     >
-                                        I agree to all the{' '}
+                                        {t('termsAgreement1')}{' '}
                                         <a
                                             className="font-medium underline text-primary-600 hover:text-primary-700 hover:no-underline"
                                             href="#"
                                         >
-                                            Terms
-                                        </a>
-                                        and
+                                            {t('termsLink')}
+                                        </a>{' '}
+                                        {t('termsAgreement2')}{' '}
                                         <a
                                             className="font-medium underline hover:no-underline text-primary-600 hover:text-primary-700"
                                             href="#"
                                         >
-                                            Privacy Policy
+                                            {t('privacyPolicyLink')}
                                         </a>
                                         .
                                     </label>
@@ -207,7 +211,7 @@ export function LoginModal({ action: close }: { action: () => void }) {
                         onClick={onLogin}
                         className="w-full text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4"
                     >
-                        Login
+                        {t('loginButton')}
                     </button>
                     {error ? (
                         <p className="text-sm text-center text-red-600">
@@ -216,22 +220,22 @@ export function LoginModal({ action: close }: { action: () => void }) {
                     ) : null}
                     {isSignup ? (
                         <p className="text-sm font-light text-center text-gray-500 dark:text-gray-400">
-                            Tôi đã có tài khoản
+                            {t('alreadyHaveAccount')}
                             <a
                                 onClick={() => setIsSignup(false)}
                                 className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500 hover:text-primary-700 px-2"
                             >
-                                Đăng nhập
+                                {t('loginButton')}
                             </a>
                         </p>
                     ) : (
                         <p className="text-sm font-light text-center text-gray-500 dark:text-gray-400">
-                            Tôi chưa có tài khoản
+                            {t('dontHaveAccount')}
                             <a
                                 onClick={() => setIsSignup(true)}
                                 className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500 hover:text-primary-700 px-2"
                             >
-                                Đăng kí
+                                {t('signupButton')}
                             </a>
                         </p>
                     )}
