@@ -9,4 +9,12 @@ export function getFrontendURL(): string {
         return 'https://saigon2.thinkmay.net';
     }
 }
-export const POCKETBASE = () => new PocketBase(getFrontendURL());
+
+let pocketbaseInstance: PocketBase | null = null;
+
+export const POCKETBASE = () => {
+    if (!pocketbaseInstance) {
+        pocketbaseInstance = new PocketBase(getFrontendURL());
+    }
+    return pocketbaseInstance;
+};

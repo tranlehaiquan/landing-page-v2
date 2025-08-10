@@ -68,14 +68,14 @@ export function LoginModal({ action: close }: { action: () => void }) {
                     <div className="flex items-center mb-2">
                         <button className="flex items-center text-xl font-semibold text-gray-900 dark:text-white">
                             <Image
-                                src="/image/logo_white.png"
+                                src="/img/logo_white.png"
                                 className="h-12 mr-4 hidden dark:hidden"
                                 alt="thinkmay logo"
                                 width={48}
                                 height={48}
                             />
                             <Image
-                                src="/image/logo.png"
+                                src="/img/logo.png"
                                 className="h-12 mr-4 dark:hidden"
                                 alt="thinkmay logo"
                                 width={48}

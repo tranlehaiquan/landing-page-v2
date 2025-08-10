@@ -6,7 +6,8 @@ export const logout = () => POCKETBASE().authStore.clear();
 
 export const onAuthChange = (callback: (isValid: boolean) => void) => {
     const pb = POCKETBASE();
-    const unsubscribe = pb.authStore.onChange(() => {
+    const unsubscribe = pb.authStore.onChange((token, record) => {
+        console.log('New store data 1:', token, record);
         callback(pb.authStore.isValid);
     });
     return unsubscribe;
