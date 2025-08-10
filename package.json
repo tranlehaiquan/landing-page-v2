@@ -5,8 +5,7 @@
     "scripts": {
         "dev": "next dev --turbopack && cd webapp && npm run build",
         "format": "prettier --write \"./**/*.{jsx,ts,js,tsx}\"",
-        "origin:build": "cd webapp && npm i && npm run build && cd .. && next build",
-        "build": "next build",
+        "build": "cd webapp && npm i && npm run build && cd .. && next build",
         "start": "next start",
         "lint": "next lint",
         "postinstall": "flowbite-react patch"
