@@ -138,5 +138,27 @@
             "step3": "Yêu cầu sẽ được xử lý trong vòng 2 ngày làm việc."
         },
         "note": "Lưu ý: Chính sách không áp dụng cho các trường hợp vi phạm điều khoản sử dụng dịch vụ hoặc cố ý gây lỗi. Vui lòng trải nghiệm dịch vụ miễn phí trước khi đưa ra quyết định mua!"
+    },
+    "Auth": {
+        "loginTitle": "Đăng nhập Thinkmay",
+        "loginButton": "Đăng nhập",
+        "signupButton": "Đăng ký",
+        "emailLabel": "Email",
+        "emailPlaceholder": "name@gmail.com",
+        "passwordLabel": "Mật khẩu",
+        "passwordPlaceholder": "••••••••",
+        "repeatPasswordLabel": "Nhập lại mật khẩu",
+        "googleLogin": "Google",
+        "termsAgreement1": "Tôi đồng ý với tất cả",
+        "termsAgreement2": "và",
+        "termsLink": "Điều khoản",
+        "privacyPolicyLink": "Chính sách bảo mật",
+        "alreadyHaveAccount": "Tôi đã có tài khoản",
+        "dontHaveAccount": "Tôi chưa có tài khoản",
+        "emailValidationError": "Email phải có @gmail.com"
+    },
+    "Common": {
+        "toggleTheme": "Chuyển đổi chủ đề",
+        "selectLanguage": "Chọn ngôn ngữ"
     }
 }

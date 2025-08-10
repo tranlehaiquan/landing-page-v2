@@ -2,7 +2,7 @@
 
 import { useRouter, usePathname } from '@/i18n/routing';
 import { useSearchParams } from 'next/navigation';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { useState, useRef, useEffect } from 'react';
 
@@ -17,6 +17,7 @@ export function LanguageSwitcher() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const locale = useLocale();
+    const t = useTranslations('Common');
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -76,7 +77,7 @@ export function LanguageSwitcher() {
         <div className="relative" ref={dropdownRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                aria-label="Select language"
+                aria-label={t('selectLanguage')}
                 aria-expanded={isOpen}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-primary-400 min-w-[140px]"
             >

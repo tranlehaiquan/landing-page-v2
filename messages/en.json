@@ -138,5 +138,27 @@
             "step3": "The request will be processed within 2 business days."
         },
         "note": "Note: The policy does not apply to violations of service terms or intentional faults. Please try the free service before making a purchase!"
+    },
+    "Auth": {
+        "loginTitle": "Login to Thinkmay",
+        "loginButton": "Login",
+        "signupButton": "Sign up",
+        "emailLabel": "Email",
+        "emailPlaceholder": "name@gmail.com",
+        "passwordLabel": "Password",
+        "passwordPlaceholder": "••••••••",
+        "repeatPasswordLabel": "Repeat Password",
+        "googleLogin": "Google",
+        "termsAgreement1": "I agree to all the",
+        "termsAgreement2": "and",
+        "termsLink": "Terms",
+        "privacyPolicyLink": "Privacy Policy",
+        "alreadyHaveAccount": "I already have an account",
+        "dontHaveAccount": "I don't have an account",
+        "emailValidationError": "Email must have @gmail.com"
+    },
+    "Common": {
+        "toggleTheme": "Toggle theme",
+        "selectLanguage": "Select language"
     }
 }
