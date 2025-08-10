@@ -17,5 +17,6 @@
         "components/locales",
         "lib/i18n",
         "webapp/src/backend/reducers/locales"
-    ]
+    ],
+    "cSpell.words": ["supabase"]
 }

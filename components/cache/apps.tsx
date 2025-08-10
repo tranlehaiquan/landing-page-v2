@@ -1,6 +1,6 @@
 'use cache';
 
-import { createClient } from '@supabase/supabase-js';
+import { createSupabaseClient } from '@/utils/supabase';
 import { cacheLife } from 'next/dist/server/use-cache/cache-life';
 
 type App = {
@@ -59,10 +59,7 @@ type App = {
 const fetchApps = async (): Promise<App[]> => {
     'use cache';
     cacheLife('hours');
-    const supabase = createClient(
-        'https://play.2.thinkmay.net:445',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE'
-    );
+    const supabase = createSupabaseClient();
     const { data, error } = await supabase
         .from('stores')
         .select('code_name,name,metadata,management->>kickey')

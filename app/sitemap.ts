@@ -10,8 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Define all available routes in your application
     const routes = [
         '/', // Home page
-        '/blog', // Blog listing
-        '/blog/articles', // Blog articles
+        // '/blog', // Blog listing
+        // '/blog/articles', // Blog articles
         '/faq', // FAQ page
         '/history', // History page
         '/legal', // Legal page
@@ -53,9 +53,9 @@ function getChangeFrequency(
     switch (routeString) {
         case '/':
             return 'weekly';
-        case '/blog':
-        case '/blog/articles':
-            return 'daily';
+        // case '/blog':
+        // case '/blog/articles':
+        //     return 'daily';
         case '/pricing':
             return 'monthly';
         case '/faq':
@@ -75,12 +75,12 @@ function getPriority(href: Href): number {
             return 1.0;
         case '/pricing':
             return 0.9;
-        case '/blog':
-            return 0.8;
+        // case '/blog':
+        //     return 0.8;
         case '/faq':
             return 0.7;
-        case '/blog/articles':
-            return 0.6;
+        // case '/blog/articles':
+        //     return 0.6;
         default:
             return 0.5;
     }

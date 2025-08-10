@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export { LanguageSwitcher } from './LanguageSwitcher';
 export { Header } from './Header';
@@ -201,20 +202,20 @@ export const SocialProof = () => {
                     </h2>
                     <div className="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
                         <div>
-                            <a
+                            <Link
                                 href="/legal"
                                 className="inline-flex items-center text-base font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
                             >
                                 {t('legality')}
-                            </a>
+                            </Link>
                         </div>
                         <div>
-                            <a
+                            <Link
                                 href="/legal"
                                 className="inline-flex items-center text-base font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
                             >
                                 {t('trust')}
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

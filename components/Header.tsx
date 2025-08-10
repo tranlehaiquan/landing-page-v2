@@ -12,6 +12,7 @@ import { Link } from '@/i18n/routing';
 export const Header = () => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [popup, setPopup] = useState<string>('close');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const route = usePathname();
     const t = useTranslations('Header');
 
@@ -48,17 +49,21 @@ export const Header = () => {
         }
     ];
 
-    const renderRoute = (item: Route, index: number) => (
-        <li key={index}>
-            <Link
-                href={item.url}
-                className={`block py-2 pr-4 pl-3 border-b border-gray-100 ${route.includes(item.url) && item.url !== '/' ? 'text-primary-600' : route === item.url ? 'text-primary-600' : ''} hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-400 lg:p-0 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-primary-500 lg:dark:hover:bg-transparent dark:border-gray-700`}
-                aria-current="page"
-            >
-                {t(item.titleKey)}
-            </Link>
-        </li>
-    );
+    const renderRoute = (item: Route, index: number) => {
+        const isActive = item.url === '/' ? route === item.url : route.includes(item.url);
+        
+        return (
+            <li key={item.url}>
+                <Link
+                    href={item.url}
+                    className={`block py-2 pr-4 pl-3 border-b border-gray-100 ${isActive ? 'text-primary-600' : ''} hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-400 lg:p-0 lg:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-primary-500 lg:dark:hover:bg-transparent dark:border-gray-700`}
+                    aria-current={isActive ? "page" : undefined}
+                >
+                    {t(item.titleKey)}
+                </Link>
+            </li>
+        );
+    };
 
     return (
         <>
@@ -87,12 +92,13 @@ export const Header = () => {
                             </div> */}
                             {loggedIn ? (
                                 <>
-                                    <a
+                                    <button
+                                        type="button"
                                         className="text-black dark:text-white hover:bg-blue-800 hover:text-white focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 focus:outline-none cursor-pointer"
                                         onClick={logout}
                                     >
                                         {t('logout')}
-                                    </a>
+                                    </button>
                                     <a
                                         className="text-white font-bold bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 cursor-pointer"
                                         href="/play/?ref=landingpage_navplay"
@@ -101,23 +107,29 @@ export const Header = () => {
                                     </a>
                                 </>
                             ) : (
-                                <a
+                                <button
+                                    type="button"
                                     className="text-white bg-gray-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 cursor-pointer"
                                     onClick={() => setPopup('login')}
                                 >
                                     {t('login')}
-                                </a>
+                                </button>
                             )}
                             <button
                                 data-collapse-toggle="mobile-menu-2"
                                 type="button"
                                 className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                                 aria-controls="mobile-menu-2"
-                                aria-expanded="false"
+                                aria-expanded={isMenuOpen}
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
                             >
-                                <span className="sr-only">Open main menu</span>
+                                <span className="sr-only">
+                                    {isMenuOpen
+                                        ? 'Close main menu'
+                                        : 'Open main menu'}
+                                </span>
                                 <svg
-                                    className="w-6 h-6"
+                                    className={`w-6 h-6 ${isMenuOpen ? 'hidden' : 'block'}`}
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +141,7 @@ export const Header = () => {
                                     />
                                 </svg>
                                 <svg
-                                    className="hidden w-6 h-6"
+                                    className={`w-6 h-6 ${isMenuOpen ? 'block' : 'hidden'}`}
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +155,7 @@ export const Header = () => {
                             </button>
                         </div>
                         <div
-                            className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+                            className={`justify-between items-center w-full lg:flex lg:w-auto lg:order-1 ${isMenuOpen ? 'block' : 'hidden'}`}
                             id="mobile-menu-2"
                         >
                             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">

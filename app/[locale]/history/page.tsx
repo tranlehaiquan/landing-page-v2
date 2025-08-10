@@ -1,6 +1,7 @@
 'use client';
 import { info, loggedin } from '@/api/auth';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createSupabaseClient } from '@/utils/supabase';
+import { SupabaseClient } from '@supabase/supabase-js';
 import React, { useEffect, useState } from 'react';
 
 export type PlanName =
@@ -49,12 +50,7 @@ export default function Page() {
     const [depositHistory, setDepositHistory] = useState<Deposit[]>([]);
 
     useEffect(() => {
-        setSupabase(
-            createClient(
-                'https://play.2.thinkmay.net:445',
-                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE'
-            )
-        );
+        setSupabase(createSupabaseClient());
 
         const i = setInterval(() => {
             const loggedIn = loggedin();

@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { locales } from '@/i18n/config';
+import { locales, type Locale } from '@/i18n/config';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -20,13 +20,13 @@ const geistMono = Geist_Mono({
 
 type Props = {
     children: React.ReactNode;
-    params: { locale: string };
+    params: { locale: Locale };
 };
 
 export async function generateMetadata({
     params
 }: {
-    params: { locale: string };
+    params: { locale: Locale };
 }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'Metadata' });
