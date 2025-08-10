@@ -1,4 +1,7 @@
 {
+  "Common": {
+    "toggleTheme": "Toggle theme"
+  },
       "Metadata": {
     "title": "Thinkmay Cloud PC - Play Games on Cloud",
     "description": "Work and game on Cloud PC - no need to download anything, games on any devices, work from anywhere"
