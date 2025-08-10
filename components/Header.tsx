@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { loggedin, logout } from '@/api/auth';
+import { loggedin, logout, onAuthChange } from '@/api/auth';
 import { Modal } from './popup';
 import { LanguageSwitcher } from './LanguageSwitcher';
 // import { ThemeToggle } from './ThemeToggle';
@@ -17,12 +17,16 @@ export const Header = () => {
     const t = useTranslations('Header');
 
     useEffect(() => {
-        const i = setInterval(() => {
-            setLoggedIn(loggedin());
-        }, 100);
-        return () => {
-            clearInterval(i);
-        };
+        // Set initial state
+        setLoggedIn(loggedin());
+        
+        // Subscribe to auth changes
+        const unsubscribe = onAuthChange((isValid) => {
+            setLoggedIn(isValid);
+        });
+        
+        // Cleanup subscription on unmount
+        return unsubscribe;
     }, []);
 
     type Route = {
