@@ -1,7 +1,7 @@
 'use client';
 import { POCKETBASE } from '@/api';
 import { login } from '@/api/auth';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
@@ -66,26 +66,23 @@ export function LoginModal({ action: close }: { action: () => void }) {
             <div className="relative p-4 w-full max-w-lg h-full md:h-auto overflow-y-auto overflow-x-hidden">
                 <div className="relative p-4 bg-white rounded-lg shadow dark:bg-gray-900 md:p-6 ">
                     <div className="flex items-center mb-2">
-                        <a
-                            href="#"
-                            className="flex items-center text-xl font-semibold text-gray-900 dark:text-white"
-                        >
+                        <button className="flex items-center text-xl font-semibold text-gray-900 dark:text-white">
                             <Image
-                                src="logo_white.png"
+                                src="/image/logo_white.png"
                                 className="h-12 mr-4 hidden dark:hidden"
                                 alt="thinkmay logo"
                                 width={48}
                                 height={48}
                             />
                             <Image
-                                src="logo.png"
+                                src="/image/logo.png"
                                 className="h-12 mr-4 dark:hidden"
                                 alt="thinkmay logo"
                                 width={48}
                                 height={48}
                             />
                             {t('loginTitle')}
-                        </a>
+                        </button>
                     </div>
                     <div className="flex items-center mb-2 space-x-4 ">
                         <a
@@ -196,8 +193,8 @@ export function LoginModal({ action: close }: { action: () => void }) {
                                             href="#"
                                         >
                                             {t('termsLink')}
-                                        </a>
-                                        {' '}{t('termsAgreement2')}{' '}
+                                        </a>{' '}
+                                        {t('termsAgreement2')}{' '}
                                         <a
                                             className="font-medium underline hover:no-underline text-primary-600 hover:text-primary-700"
                                             href="#"
