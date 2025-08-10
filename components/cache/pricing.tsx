@@ -418,7 +418,7 @@ export const Pricing = async () => {
                     className="space-y-4 text-left text-gray-900 dark:text-gray-400 mt-12"
                 >
                     {Object.keys(plan.bonus).map((key, idx) => {
-                        var Obj = (Addon as any)[key];
+                        const Obj = (Addon as any)[key];
                         return Obj != undefined ? (
                             <Obj key={idx} value={plan.bonus[key]} />
                         ) : null;
