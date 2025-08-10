@@ -79,14 +79,14 @@ export const Header = () => {
                         <a href="/play/" className="flex items-center">
                             <Image
                                 src="/img/logo_white.png"
-                                className="mr-3 h-12 sm:h-20 hidden dark:block"
+                                className="mr-3 h-12 w-12 sm:h-20 sm:w-20 hidden dark:block"
                                 alt="thinkmay logo"
                                 width={80}
                                 height={80}
                             />
                             <Image
                                 src="/img/logo.png"
-                                className="mr-3 h-12 sm:h-20 dark:hidden"
+                                className="mr-3 h-12 w-12 sm:h-20 sm:w-20 dark:hidden"
                                 alt="thinkmay logo"
                                 width={80}
                                 height={80}
@@ -95,7 +95,7 @@ export const Header = () => {
                                 Thinkmay
                             </span>
                         </a>
-                        <div className="flex items-center lg:order-2 gap-2">
+                        <div className="flex items-center lg:order-2 gap-1 sm:gap-2">
                             <LanguageSwitcher />
                             {/* <div className="ml-2">
                                 <ThemeToggle />
@@ -128,7 +128,7 @@ export const Header = () => {
                             <button
                                 data-collapse-toggle="mobile-menu-2"
                                 type="button"
-                                className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                                 aria-controls="mobile-menu-2"
                                 aria-expanded={isMenuOpen}
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
