@@ -1,5 +1,7 @@
+'use client';
+import React from 'react';
 import { createSupabaseClient } from '@/utils/supabase';
-import { cacheLife } from 'next/dist/server/use-cache/cache-life';
+import { useTranslations } from 'next-intl';
 
 type Plan = {
     name: string;
@@ -14,7 +16,7 @@ type Plan = {
 };
 
 const Addon = {
-    no_waiting_line: ({ value }: { value: boolean }) => (
+    no_waiting_line: ({ value, t }: { value: boolean; t: any }) => (
         <li
             className={`flex items-center space-x-3 ${
                 !value ? 'text-gray-500' : ''
@@ -34,11 +36,11 @@ const Addon = {
                 ></path>
             </svg>
             <span className={!value ? 'line-through' : ''}>
-                Không có hàng chờ
+                {t('noWaitingLine')}
             </span>
         </li>
     ),
-    multiple_cluster: ({ value }: { value: boolean }) => (
+    multiple_cluster: ({ value, t }: { value: boolean; t: any }) => (
         <li
             className={`flex items-center space-x-3 ${
                 !value ? 'text-gray-500' : ''
@@ -58,11 +60,11 @@ const Addon = {
                 ></path>
             </svg>
             <span className={!value ? 'line-through' : ''}>
-                Luôn luôn có server backup
+                {t('multipleCluster')}
             </span>
         </li>
     ),
-    refundday: ({ value }: { value: number }) => (
+    refundday: ({ value, t }: { value: number; t: any }) => (
         <li className="flex items-center space-x-3">
             <svg
                 className="flex-shrink-0 w-5 h-5"
@@ -77,10 +79,10 @@ const Addon = {
                     clipRule="evenodd"
                 ></path>
             </svg>
-            <span>Hoàn tiền trong {value} ngày đầu</span>
+            <span>{t('refundInDays', { days: value })}</span>
         </li>
     ),
-    refundtime: ({ value }: { value: number }) => (
+    refundtime: ({ value, t }: { value: number; t: any }) => (
         <li className="flex items-center space-x-3">
             <svg
                 className="flex-shrink-0 w-5 h-5"
@@ -95,10 +97,10 @@ const Addon = {
                     clipRule="evenodd"
                 ></path>
             </svg>
-            <span>Hoàn tiền trong {value}h chơi đầu</span>
+            <span>{t('refundInHours', { hours: value })}</span>
         </li>
     ),
-    time: ({ value }: { value: number }) => (
+    time: ({ value, t }: { value: number; t: any }) => (
         <li className="flex items-center space-x-3">
             <svg
                 className="flex-shrink-0 w-5 h-5"
@@ -114,13 +116,13 @@ const Addon = {
                 ></path>
             </svg>
             {value == 9999 ? (
-                <span className="line-through">Giới hạn giờ chơi</span>
+                <span className="line-through">{t('timeLimitCrossed')}</span>
             ) : (
-                <span>Tối đa {value}h chơi</span>
+                <span>{t('maxHoursPlay', { hours: value })}</span>
             )}
         </li>
     ),
-    storage_limit: ({ value }: { value: number }) => (
+    storage_limit: ({ value, t }: { value: number; t: any }) => (
         <li className="flex items-center space-x-3">
             <svg
                 className="flex-shrink-0 w-5 h-5"
@@ -136,13 +138,13 @@ const Addon = {
                 ></path>
             </svg>
             {value == 0 ? (
-                <span className="line-through">Giới hạn dung lượng tối đa</span>
+                <span className="line-through">{t('storageLimitCrossed')}</span>
             ) : (
-                <span>Giới hạn {value}GB dung lượng tối đa</span>
+                <span>{t('storageLimit', { storage: value })}</span>
             )}
         </li>
     ),
-    storage_credit: ({ value }: { value: number }) => (
+    storage_credit: ({ value, t }: { value: number; t: any }) => (
         <li className="flex items-center space-x-3">
             <svg
                 className="flex-shrink-0 w-5 h-5"
@@ -158,13 +160,13 @@ const Addon = {
                 ></path>
             </svg>
             {value == 0 ? (
-                <span className="line-through">Giới hạn dung lượng</span>
+                <span className="line-through">{t('storageLimitCrossed')}</span>
             ) : (
-                <span>{value} credit dung lượng</span>
+                <span>{t('storageCredit', { credit: value })}</span>
             )}
         </li>
     ),
-    session_duration: ({ value }: { value: number }) => (
+    session_duration: ({ value, t }: { value: number; t: any }) => (
         <li className="flex items-center space-x-3">
             <svg
                 className="flex-shrink-0 w-5 h-5"
@@ -179,10 +181,10 @@ const Addon = {
                     clipRule="evenodd"
                 ></path>
             </svg>
-            <span> Tối đa {value} giờ mỗi phiên chơi</span>
+            <span>{t('maxSessionHours', { hours: value })}</span>
         </li>
     ),
-    allow_afk: ({ value }: { value: boolean }) => (
+    allow_afk: ({ value, t }: { value: boolean; t: any }) => (
         <li className="flex items-center space-x-3">
             <svg
                 className="flex-shrink-0 w-5 h-5"
@@ -198,17 +200,17 @@ const Addon = {
                 ></path>
             </svg>
             {value == true ? (
-                <span className="line-through">Không hỗ trợ treo máy </span>
+                <span className="line-through">{t('noAfkSupport')}</span>
             ) : (
-                <span> Không hỗ trợ treo máy </span>
+                <span>{t('noAfkSupport')}</span>
             )}
         </li>
     )
 };
 
-const subcontents = [
+const getSubcontents = (t: any) => [
     {
-        title: 'Gói 2 tuần',
+        title: t('package2Weeks'),
         highlight: false,
         _name: 'week1',
         amount: 199000,
@@ -226,7 +228,7 @@ const subcontents = [
         }
     },
     {
-        title: 'Gói tháng',
+        title: t('packageMonth'),
         highlight: true,
         _name: 'month1',
         amount: 299000,
@@ -244,7 +246,7 @@ const subcontents = [
         }
     },
     {
-        title: 'Gói tháng cao cấp',
+        title: t('packageMonthPremium'),
         highlight: false,
         _name: 'month2',
         amount: 499000,
@@ -263,10 +265,9 @@ const subcontents = [
     }
 ];
 
-export const FetchPricing = async (): Promise<Plan[]> => {
-    'use cache';
-    cacheLife('hours');
+export const FetchPricing = async (t: any): Promise<Plan[]> => {
     const supabase = createSupabaseClient();
+    const subcontents = getSubcontents(t);
 
     const { data, error } = await supabase
         .from('plans')
@@ -337,8 +338,6 @@ type Domain = {
 };
 
 const fetchDomain = async (): Promise<Domain[]> => {
-    'use cache';
-    cacheLife('hours');
     const supabase = createSupabaseClient();
     const { data: domains_v3, error: err } = await supabase.rpc(
         'get_domains_availability_v5'
@@ -347,7 +346,7 @@ const fetchDomain = async (): Promise<Domain[]> => {
     else return domains_v3;
 };
 
-const PaymentButton = ({ plan }: { plan: string }) => {
+const PaymentButton = ({ plan, t }: { plan: string; t: any }) => {
     const defaultServer = 'saigon2.thinkmay.net';
     const href = `/play/?plan=${plan}&server=${defaultServer}&ref=landingpage_${plan}`;
     return (
@@ -357,19 +356,23 @@ const PaymentButton = ({ plan }: { plan: string }) => {
                 type="button"
                 className="py-2.5 px-5 bg-blue-600 shadow-sm rounded-full transition-all duration-500 text-base text-white font-semibold text-center w-fit block mx-auto hover:bg-blue-700  cursor-pointer"
             >
-                Đăng kí
+                {t('signUp')}
             </a>
         </div>
     );
 };
 
-const DomainSelection = async () => {
-    const domains = await fetchDomain();
+const DomainSelection = ({ t }: { t: any }) => {
+    const [domains, setDomains] = React.useState<Domain[]>([]);
+    
+    React.useEffect(() => {
+        fetchDomain().then(setDomains);
+    }, []);
 
     return (
         <div className="block w-full content-center">
             <label className="block text-center mb-2 text-xl font-medium text-white w-full">
-                Server
+                {t('server')}
             </label>
             <select
                 id="countries"
@@ -389,8 +392,8 @@ const DomainSelection = async () => {
     );
 };
 
-export const Pricing = async () => {
-    const plans = await FetchPricing();
+export const Pricing = () => {
+    const t = useTranslations('PricingDetails');
     const renderPlan = (plan: Plan, index: number) => {
         return (
             <div
@@ -400,7 +403,7 @@ export const Pricing = async () => {
                 {plan.total_days == 30 ? (
                     <div className="mb-2">
                         <span className="py-1 px-3 text-sm text-primary-800 bg-primary-100 rounded dark:bg-primary-200 dark:text-primary-800">
-                            Most popular
+                            {t('mostPopular')}
                         </span>
                     </div>
                 ) : (
@@ -412,7 +415,7 @@ export const Pricing = async () => {
                 <span className="text-5xl font-extrabold text-gray-900 dark:text-white mb-6">
                     {plan.amount / 1000}k
                 </span>
-                <PaymentButton plan={plan.name} />
+                <PaymentButton plan={plan.name} t={t} />
                 <ul
                     role="list"
                     className="space-y-4 text-left text-gray-900 dark:text-gray-400 mt-12"
@@ -420,7 +423,7 @@ export const Pricing = async () => {
                     {Object.keys(plan.bonus).map((key, idx) => {
                         var Obj = (Addon as any)[key];
                         return Obj != undefined ? (
-                            <Obj key={idx} value={plan.bonus[key]} />
+                            <Obj key={idx} value={plan.bonus[key]} t={t} />
                         ) : null;
                     })}
                 </ul>
@@ -428,17 +431,23 @@ export const Pricing = async () => {
         );
     };
 
+    const [plans, setPlans] = React.useState<Plan[]>([]);
+    
+    React.useEffect(() => {
+        FetchPricing(t).then(setPlans);
+    }, [t]);
+
     return (
         <section className="h-full">
             <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                        Đăng kí dịch vụ Cloud PC
+                        {t('registerCloudPC')}
                     </h2>
                     <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-                        *chưa bao gồm tài khoản game và các nâng cấp khác
+                        {t('excludesGameAccounts')}
                     </p>
-                    <DomainSelection />
+                    <DomainSelection t={t} />
                 </div>
                 <div className="grid gap-8 xl:grid-cols-3 xl:gap-10">
                     {plans

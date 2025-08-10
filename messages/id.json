@@ -1,6 +1,7 @@
 {
   "Common": {
-    "toggleTheme": "Ganti tema"
+    "toggleTheme": "Ganti tema",
+        "selectLanguage": "Pilih bahasa"
   },
       "Metadata": {
     "title": "Thinkmay Cloud PC - Main Game di Cloud",
@@ -157,8 +158,25 @@
         "dontHaveAccount": "Saya belum memiliki akun",
         "emailValidationError": "Email harus memiliki @gmail.com"
     },
-    "Common": {
-        "toggleTheme": "Ganti tema",
-        "selectLanguage": "Pilih bahasa"
+    "PricingDetails": {
+        "noWaitingLine": "Tanpa antrean",
+        "multipleCluster": "Selalu tersedia server cadangan",
+        "refundInDays": "Pengembalian dalam {days} hari pertama",
+        "refundInHours": "Pengembalian dalam {hours}jam pertama bermain",
+        "timeLimitCrossed": "Batas waktu bermain",
+        "maxHoursPlay": "Maksimal {hours}jam bermain",
+        "storageLimitCrossed": "Batas penyimpanan maksimum",
+        "storageLimit": "Maksimal {storage}GB penyimpanan",
+        "storageCredit": "{credit} kredit penyimpanan",
+        "maxSessionHours": "Maksimal {hours} jam per sesi bermain",
+        "noAfkSupport": "Tidak mendukung AFK",
+        "server": "Server",
+        "signUp": "Daftar",
+        "mostPopular": "Paling populer",
+        "registerCloudPC": "Daftar Layanan Cloud PC",
+        "excludesGameAccounts": "*tidak termasuk akun game dan upgrade lainnya",
+        "package2Weeks": "Paket 2 Minggu",
+        "packageMonth": "Paket Bulanan",
+        "packageMonthPremium": "Paket Bulanan Premium"
     }
 }

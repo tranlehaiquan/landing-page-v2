@@ -1,20 +1,21 @@
 {
-  "Common": {
-    "toggleTheme": "Chuyển đổi chủ đề"
-  },
-      "Metadata": {
-    "title": "Thinkmay Cloud PC - chơi game trên mây",
-    "description": "Làm việc và chơi game trên Cloud PC - không cần tải xuống, chơi game trên mọi thiết bị, làm việc từ mọi nơi"
-  },
-  "Header": {
-    "homeTitle": "Trang chủ",
-    "pricingTitle": "Mức giá",
-    "faqTitle": "Câu hỏi thường gặp",
-    "logout": "Đăng xuất",
-    "playNow": "Chơi ngay",
-    "login": "Đăng nhập",
-    "refundPolicy": "Chính sách hoàn tiền"
-  },
+    "Common": {
+        "toggleTheme": "Chuyển đổi chủ đề",
+        "selectLanguage": "Chọn ngôn ngữ"
+    },
+    "Metadata": {
+        "title": "Thinkmay Cloud PC - chơi game trên mây",
+        "description": "Làm việc và chơi game trên Cloud PC - không cần tải xuống, chơi game trên mọi thiết bị, làm việc từ mọi nơi"
+    },
+    "Header": {
+        "homeTitle": "Trang chủ",
+        "pricingTitle": "Mức giá",
+        "faqTitle": "Câu hỏi thường gặp",
+        "logout": "Đăng xuất",
+        "playNow": "Chơi ngay",
+        "login": "Đăng nhập",
+        "refundPolicy": "Chính sách hoàn tiền"
+    },
     "Hero": {
         "title": "Thinkmay CloudPC - chơi game trên mây",
         "description1": "Cấu hình RTX 3060Ti, 16GB RAM",
@@ -157,8 +158,25 @@
         "dontHaveAccount": "Tôi chưa có tài khoản",
         "emailValidationError": "Email phải có @gmail.com"
     },
-    "Common": {
-        "toggleTheme": "Chuyển đổi chủ đề",
-        "selectLanguage": "Chọn ngôn ngữ"
+    "PricingDetails": {
+        "noWaitingLine": "Không có hàng chờ",
+        "multipleCluster": "Luôn luôn có server backup",
+        "refundInDays": "Hoàn tiền trong {days} ngày đầu",
+        "refundInHours": "Hoàn tiền trong {hours}h chơi đầu",
+        "timeLimitCrossed": "Giới hạn giờ chơi",
+        "maxHoursPlay": "Tối đa {hours}h chơi",
+        "storageLimitCrossed": "Giới hạn dung lượng tối đa",
+        "storageLimit": "Giới hạn {storage}GB dung lượng tối đa",
+        "storageCredit": "{credit} credit dung lượng",
+        "maxSessionHours": "Tối đa {hours} giờ mỗi phiên chơi",
+        "noAfkSupport": "Không hỗ trợ treo máy",
+        "server": "Server",
+        "signUp": "Đăng ký",
+        "mostPopular": "Phổ biến nhất",
+        "registerCloudPC": "Đăng ký dịch vụ Cloud PC",
+        "excludesGameAccounts": "*chưa bao gồm tài khoản game và các nâng cấp khác",
+        "package2Weeks": "Gói 2 tuần",
+        "packageMonth": "Gói tháng",
+        "packageMonthPremium": "Gói tháng cao cấp"
     }
 }

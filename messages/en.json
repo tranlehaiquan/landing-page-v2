@@ -1,20 +1,21 @@
 {
-  "Common": {
-    "toggleTheme": "Toggle theme"
-  },
-      "Metadata": {
-    "title": "Thinkmay Cloud PC - Play Games on Cloud",
-    "description": "Work and game on Cloud PC - no need to download anything, games on any devices, work from anywhere"
-  },
-  "Header": {
-    "homeTitle": "Home",
-    "pricingTitle": "Pricing",
-    "faqTitle": "FAQ",
-    "logout": "Logout",
-    "playNow": "Play Now",
-    "login": "Login",
-    "refundPolicy": "Refund Policy"
-  },
+    "Common": {
+        "toggleTheme": "Toggle theme",
+        "selectLanguage": "Select language"
+    },
+    "Metadata": {
+        "title": "Thinkmay Cloud PC - Play Games on Cloud",
+        "description": "Work and game on Cloud PC - no need to download anything, games on any devices, work from anywhere"
+    },
+    "Header": {
+        "homeTitle": "Home",
+        "pricingTitle": "Pricing",
+        "faqTitle": "FAQ",
+        "logout": "Logout",
+        "playNow": "Play Now",
+        "login": "Login",
+        "refundPolicy": "Refund Policy"
+    },
     "Hero": {
         "title": "Thinkmay CloudPC - Play Games on Cloud",
         "description1": "RTX 3060Ti, 16GB RAM Configuration",
@@ -157,8 +158,25 @@
         "dontHaveAccount": "I don't have an account",
         "emailValidationError": "Email must have @gmail.com"
     },
-    "Common": {
-        "toggleTheme": "Toggle theme",
-        "selectLanguage": "Select language"
+    "PricingDetails": {
+        "noWaitingLine": "No waiting line",
+        "multipleCluster": "Always has backup server",
+        "refundInDays": "Refund within {days} days",
+        "refundInHours": "Refund within {hours}h of play",
+        "timeLimitCrossed": "Play time limit",
+        "maxHoursPlay": "Up to {hours}h of play",
+        "storageLimitCrossed": "Storage limit",
+        "storageLimit": "Limit {storage}GB storage",
+        "storageCredit": "{credit} storage credit",
+        "maxSessionHours": "Up to {hours} hours per session",
+        "noAfkSupport": "No AFK support",
+        "server": "Server",
+        "signUp": "Sign Up",
+        "mostPopular": "Most popular",
+        "registerCloudPC": "Register for Cloud PC Service",
+        "excludesGameAccounts": "*excludes game accounts and other upgrades",
+        "package2Weeks": "2-Week Package",
+        "packageMonth": "Monthly Package",
+        "packageMonthPremium": "Premium Monthly Package"
     }
 }
