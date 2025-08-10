@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { loggedin, logout, onAuthChange } from '@/api/auth';
 import { Modal } from './popup';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -76,15 +77,19 @@ export const Header = () => {
                 <nav className="bg-slate-300 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
                     <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                         <a href="/play/" className="flex items-center">
-                            <img
+                            <Image
                                 src="/img/logo_white.png"
                                 className="mr-3 h-12 sm:h-20 hidden dark:block"
                                 alt="thinkmay logo"
+                                width={80}
+                                height={80}
                             />
-                            <img
+                            <Image
                                 src="/img/logo.png"
                                 className="mr-3 h-12 sm:h-20 dark:hidden"
                                 alt="thinkmay logo"
+                                width={80}
+                                height={80}
                             />
                             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                                 Thinkmay

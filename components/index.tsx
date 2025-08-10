@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
 export { LanguageSwitcher } from './LanguageSwitcher';
@@ -59,15 +60,19 @@ export const Hero = () => {
                         </svg>
                     </a> */}
                 </div>
-                <img
+                <Image
                     className="mx-auto mb-5 lg:mb-8 border border-gray-200 rounded-lg shadow-xl dark:border-gray-600 z-1 dark:hidden"
                     src="/img/screenshoot_store.png"
                     alt="demo image for thinkmay"
+                    width={800}
+                    height={600}
                 />
-                <img
+                <Image
                     className="mx-auto mb-5 lg:mb-8 border border-gray-200 rounded-lg shadow-xl dark:border-gray-600 hidden dark:block z-1"
                     src="/img/screenshoot_store.png"
                     alt="demo image for thinkmay"
+                    width={800}
+                    height={600}
                 />
             </div>
             <div className="pt-48 lg:pb-16 pb-8 -mt-48 bg-gray-50 sm:pt-80 sm:-mt-80 dark:bg-gray-800 z-2">
@@ -180,10 +185,12 @@ export const Feature = () => {
 };
 
 export const Preview = () => (
-    <img
+    <Image
         className="w-full mt-[256px] mb-[256px] hidden sm:block"
         alt="demo image for thinkmay"
         src="/img/macbook_mockup.png"
+        width={1200}
+        height={800}
     />
 );
 
@@ -259,15 +266,19 @@ export const CTA = () => {
     return (
         <section className="bg-white dark:bg-mica mt-[128px] mb-[128px]">
             <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-                <img
+                <Image
                     className="w-full dark:hidden"
                     src="/img/macbook_empty.png"
                     alt="demo image for thinkmay"
+                    width={600}
+                    height={400}
                 />
-                <img
+                <Image
                     className="w-full hidden dark:block"
                     src="/img/macbook_empty.png"
                     alt="demo image for thinkmay"
+                    width={600}
+                    height={400}
                 />
                 <div className="mt-4 md:mt-0">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -307,15 +318,19 @@ export const Footer = () => {
                             href="/play/?app=null&ref=landingpage"
                             className="flex items-center mb-2 text-2xl font-semibold text-gray-900 sm:mb-0 dark:text-white"
                         >
-                            <img
+                            <Image
                                 src="/img/logo_white.png"
                                 className="mr-3 h-6 sm:h-9 hidden dark:block"
                                 alt="thinkmay logo"
+                                width={36}
+                                height={36}
                             />
-                            <img
+                            <Image
                                 src="/img/logo.png"
                                 className="mr-3 h-6 sm:h-9 dark:hidden"
                                 alt="thinkmay logo"
+                                width={36}
+                                height={36}
                             />
                             Thinkmay
                         </a>

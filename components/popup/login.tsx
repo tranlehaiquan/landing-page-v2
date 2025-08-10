@@ -3,6 +3,7 @@ import { POCKETBASE } from '@/api';
 import { login } from '@/api/auth';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export const loginWithEmail = (email: string, password: string) => {
     return POCKETBASE().collection('users').authWithPassword(email, password);
@@ -67,16 +68,20 @@ export function LoginModal({ action: close }: { action: () => void }) {
                             href="#"
                             className="flex items-center text-xl font-semibold text-gray-900 dark:text-white"
                         >
-                            <img
+                            <Image
                                 src="logo_white.png"
                                 className="h-12 mr-4 hidden dark:hidden"
                                 alt="thinkmay logo"
-                            ></img>
-                            <img
+                                width={48}
+                                height={48}
+                            />
+                            <Image
                                 src="logo.png"
                                 className="h-12 mr-4 dark:hidden"
                                 alt="thinkmay logo"
-                            ></img>
+                                width={48}
+                                height={48}
+                            />
                             Đăng nhập Thinkmay
                         </a>
                     </div>

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Blog() {
     return (
         <>
@@ -6,11 +8,13 @@ export default function Blog() {
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-20">
                         <article>
                             <a href="#" title="">
-                                <img
+                                <Image
                                     className="object-cover w-full rounded-lg"
                                     src="/images/hero/blog-image.png"
                                     alt="blog image"
-                                ></img>
+                                    width={600}
+                                    height={400}
+                                />
                             </a>
 
                             <div className="mt-5 space-y-4">
@@ -39,11 +43,13 @@ export default function Blog() {
                                 </h2>
 
                                 <div className="flex items-center gap-3">
-                                    <img
+                                    <Image
                                         className="w-8 h-8 rounded-full"
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
                                         alt=""
-                                    ></img>
+                                        width={32}
+                                        height={32}
+                                    />
                                     <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                         <div>Micheal Gough</div>
                                         <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -399,11 +405,12 @@ export default function Blog() {
                             <div className="mt-8 space-y-12 sm:mt-12">
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-1.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -436,11 +443,13 @@ export default function Blog() {
                                         </h2>
 
                                         <div className="flex items-center gap-3">
-                                            <img
+                                            <Image
                                                 className="w-8 h-8 rounded-full"
                                                 src="/images/users/michael-gough.png"
                                                 alt=""
-                                            ></img>
+                                                width={32}
+                                                height={32}
+                                            />
                                             <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                                 <div>Micheal Gough</div>
                                                 <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -526,11 +535,12 @@ export default function Blog() {
 
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-2.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -564,11 +574,13 @@ export default function Blog() {
                                         </h2>
 
                                         <div className="flex items-center gap-3">
-                                            <img
+                                            <Image
                                                 className="w-8 h-8 rounded-full"
                                                 src="/images/users/thomas-lean.png"
                                                 alt=""
-                                            ></img>
+                                                width={32}
+                                                height={32}
+                                            />
                                             <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                                 <div>Thomas Lean</div>
                                                 <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -654,11 +666,12 @@ export default function Blog() {
 
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-3.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -688,11 +701,13 @@ export default function Blog() {
                                         </h2>
 
                                         <div className="flex items-center gap-3">
-                                            <img
+                                            <Image
                                                 className="w-8 h-8 rounded-full"
                                                 src="/images/users/bonnie-green.png"
                                                 alt=""
-                                            ></img>
+                                                width={32}
+                                                height={32}
+                                            />
                                             <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                                 <div>Bonnie Green</div>
                                                 <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -778,11 +793,12 @@ export default function Blog() {
 
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-4.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -815,11 +831,13 @@ export default function Blog() {
                                         </h2>
 
                                         <div className="flex items-center gap-3">
-                                            <img
+                                            <Image
                                                 className="w-8 h-8 rounded-full"
                                                 src="/images/users/helene-engels.png"
                                                 alt=""
-                                            ></img>
+                                                width={32}
+                                                height={32}
+                                            />
                                             <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                                 <div>Helen Engels</div>
                                                 <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -905,11 +923,12 @@ export default function Blog() {
 
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-5.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -942,11 +961,13 @@ export default function Blog() {
                                         </h2>
 
                                         <div className="flex items-center gap-3">
-                                            <img
+                                            <Image
                                                 className="w-8 h-8 rounded-full"
                                                 src="/images/users/lana-byrd.png"
                                                 alt=""
-                                            ></img>
+                                                width={32}
+                                                height={32}
+                                            />
                                             <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                                 <div>Karen Nelson</div>
                                                 <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -1032,11 +1053,12 @@ export default function Blog() {
 
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-6.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -1160,11 +1182,12 @@ export default function Blog() {
 
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-7.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -1197,11 +1220,13 @@ export default function Blog() {
                                         </h2>
 
                                         <div className="flex items-center gap-3">
-                                            <img
+                                            <Image
                                                 className="w-8 h-8 rounded-full"
                                                 src="/images/users/joseph-mcfall.png"
                                                 alt=""
-                                            ></img>
+                                                width={32}
+                                                height={32}
+                                            />
                                             <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                                 <div>Joseph McFall</div>
                                                 <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -1287,11 +1312,12 @@ export default function Blog() {
 
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-8.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -1321,11 +1347,13 @@ export default function Blog() {
                                         </h2>
 
                                         <div className="flex items-center gap-3">
-                                            <img
+                                            <Image
                                                 className="w-8 h-8 rounded-full"
                                                 src="/images/users/leslie-livingston.png"
                                                 alt=""
-                                            ></img>
+                                                width={32}
+                                                height={32}
+                                            />
                                             <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                                 <div>Karen Nelson</div>
                                                 <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -1411,11 +1439,12 @@ export default function Blog() {
 
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-9.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -1448,11 +1477,13 @@ export default function Blog() {
                                         </h2>
 
                                         <div className="flex items-center gap-3">
-                                            <img
+                                            <Image
                                                 className="w-8 h-8 rounded-full"
                                                 src="/images/users/robert-brown.png"
                                                 alt=""
-                                            ></img>
+                                                width={32}
+                                                height={32}
+                                            />
                                             <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                                 <div>Robert Brown</div>
                                                 <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -1538,11 +1569,12 @@ export default function Blog() {
 
                                 <div className="flex flex-col items-start gap-8 xl:flex-row">
                                     <div className="relative aspect-[16/9] sm:aspect-[2/1] w-full xl:aspect-[4/3] xl:w-80 lg:shrink-0">
-                                        <img
+                                        <Image
                                             src="/images/blog/blog-thumbnail-10.png"
                                             alt=""
                                             className="absolute inset-0 object-cover w-full h-full bg-gray-200 rounded-lg"
-                                        ></img>
+                                            fill
+                                        />
                                     </div>
 
                                     <div className="space-y-4">
@@ -1575,11 +1607,13 @@ export default function Blog() {
                                         </h2>
 
                                         <div className="flex items-center gap-3">
-                                            <img
+                                            <Image
                                                 className="w-8 h-8 rounded-full"
                                                 src="/images/users/lana-byrd.png"
                                                 alt=""
-                                            ></img>
+                                                width={32}
+                                                height={32}
+                                            />
                                             <div className="text-lg font-medium leading-tight text-gray-900 dark:text-white">
                                                 <div>Lana Byrd</div>
                                                 <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -1839,11 +1873,13 @@ export default function Blog() {
 
                                     <ul className="space-y-4">
                                         <li className="flex items-start gap-2.5">
-                                            <img
+                                            <Image
                                                 className="object-cover w-6 h-6 rounded-full shrink-0"
                                                 src="/images/users/bonnie-green.png"
                                                 alt=""
-                                            ></img>
+                                                width={24}
+                                                height={24}
+                                            />
                                             <div className="flex-1 min-w-0">
                                                 <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
                                                     Bonnie Green
@@ -1862,11 +1898,13 @@ export default function Blog() {
                                         </li>
 
                                         <li className="flex items-start gap-2.5">
-                                            <img
+                                            <Image
                                                 className="object-cover w-6 h-6 rounded-full shrink-0"
                                                 src="/images/users/jese-leos.png"
                                                 alt=""
-                                            ></img>
+                                                width={24}
+                                                height={24}
+                                            />
                                             <div className="flex-1 min-w-0">
                                                 <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
                                                     Jese Leos
@@ -1885,11 +1923,13 @@ export default function Blog() {
                                         </li>
 
                                         <li className="flex items-start gap-2.5">
-                                            <img
+                                            <Image
                                                 className="object-cover w-6 h-6 rounded-full shrink-0"
                                                 src="/images/users/thomas-lean.png"
                                                 alt=""
-                                            ></img>
+                                                width={24}
+                                                height={24}
+                                            />
                                             <div className="flex-1 min-w-0">
                                                 <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
                                                     Thomas Lean
@@ -2001,16 +2041,20 @@ export default function Blog() {
                             </div>
 
                             <div>
-                                <img
+                                <Image
                                     className="object-cover w-full rounded-lg dark:hidden"
                                     src="/images/placeholder-image.png"
                                     alt=""
-                                ></img>
-                                <img
+                                    width={400}
+                                    height={300}
+                                />
+                                <Image
                                     className="hidden object-cover w-full rounded-lg dark:block"
                                     src="/images/placeholder-image-dark.png"
                                     alt=""
-                                ></img>
+                                    width={400}
+                                    height={300}
+                                />
                                 <p className="mt-3 text-base font-normal text-gray-500 dark:text-gray-400">
                                     Students and Teachers, save up to 60% on
                                     Adobe Creative Cloud.

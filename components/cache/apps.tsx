@@ -2,6 +2,7 @@
 
 import { createSupabaseClient } from '@/utils/supabase';
 import { cacheLife } from 'next/dist/server/use-cache/cache-life';
+import Image from 'next/image';
 
 type App = {
     name: string;
@@ -85,10 +86,12 @@ export const Applications = async () => {
         const href = `/play/?app=${app.code_name}&ref=landingpage_game${index}`;
         return (
             <div key={index}>
-                <img
+                <Image
                     className="object-cover w-full rounded-lg shadow-lg mb-6"
                     src={background}
                     alt={`image of game ${app.name.toLowerCase()}`}
+                    width={400}
+                    height={300}
                 />
                 <div className="space-y-3 mb-6">
                     <span className="bg-indigo-100 text-indigo-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">
