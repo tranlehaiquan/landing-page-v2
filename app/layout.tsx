@@ -45,6 +45,12 @@ export default function RootLayout({
                     src="https://www.googletagmanager.com/gtag/js?id=G-M7MLPFDFXL"
                     strategy="afterInteractive"
                 ></Script>
+                <Script 
+                    data-site-id="1"
+                    src="https://play.2.thinkmay.net:446/api/script.js"
+                    defer
+                >
+                </Script>
                 <Script strategy="afterInteractive">
                     {`
                     window.dataLayer = window.dataLayer || [];
