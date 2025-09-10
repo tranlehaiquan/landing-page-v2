@@ -45,12 +45,14 @@ export default function RootLayout({
                     src="https://www.googletagmanager.com/gtag/js?id=G-M7MLPFDFXL"
                     strategy="afterInteractive"
                 ></Script>
-                <Script 
-                    data-site-id="1"
+                <Script
                     src="https://play.2.thinkmay.net:446/api/script.js"
+                    data-track-errors="true"
+                    data-session-replay="true"
+                    data-site-id="9"
+                    data-api-key="rb_7f2d91be37169e808a643691f1916c16"
                     defer
-                >
-                </Script>
+                ></Script>
                 <Script strategy="afterInteractive">
                     {`
                     window.dataLayer = window.dataLayer || [];
