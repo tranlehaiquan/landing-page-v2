@@ -41,11 +41,6 @@ export default function RootLayout({
                     <Footer />
                 </StateProvider>
                 <Script
-                    async
-                    src="https://www.googletagmanager.com/gtag/js?id=G-M7MLPFDFXL"
-                    strategy="afterInteractive"
-                ></Script>
-                <Script
                     src="https://play.2.thinkmay.net:446/api/script.js"
                     data-track-errors="true"
                     data-session-replay="true"
@@ -53,15 +48,6 @@ export default function RootLayout({
                     data-api-key="rb_7f2d91be37169e808a643691f1916c16"
                     defer
                 ></Script>
-                <Script strategy="afterInteractive">
-                    {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){window.dataLayer.push(arguments);}
-                    gtag('js', new Date());
-
-                    gtag('config', 'G-M7MLPFDFXL');
-                `}
-                </Script>
             </body>
         </html>
     );
