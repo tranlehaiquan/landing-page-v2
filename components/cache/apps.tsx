@@ -61,7 +61,7 @@ const fetchApps = async (): Promise<App[]> => {
     cacheLife('hours');
     const supabase = createClient(
         'https://play.2.thinkmay.net:445',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE'
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
     );
     const { data, error } = await supabase
         .from('stores')
@@ -85,7 +85,7 @@ export const Applications = async () => {
     const renderApp = (app: App, index: number) => {
         const background = app.metadata.screenshots?.[0]?.path_full;
         if (!background) return null;
-        const href = `/play/index.html?app=${app.code_name}&ref=landingpage_game${index}`;
+        const href = `/play/?app=${app.code_name}&ref=landingpage_game${index}`;
         return (
             <div key={index}>
                 <img

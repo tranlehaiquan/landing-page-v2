@@ -270,7 +270,7 @@ export const FetchPricing = async (): Promise<Plan[]> => {
     cacheLife('hours');
     const supabase = createClient(
         'https://play.2.thinkmay.net:445',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE'
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
     );
 
     const { data, error } = await supabase
@@ -346,7 +346,7 @@ const fetchDomain = async (): Promise<Domain[]> => {
     cacheLife('hours');
     const supabase = createClient(
         'https://play.2.thinkmay.net:445',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE'
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
     );
     const { data: domains_v3, error: err } = await supabase.rpc(
         'get_domains_availability_v5'
@@ -357,7 +357,7 @@ const fetchDomain = async (): Promise<Domain[]> => {
 
 const PaymentButton = ({ plan }: { plan: string }) => {
     const defaultServer = 'saigon2.thinkmay.net';
-    const href = `/play/index.html?plan=${plan}&server=${defaultServer}&ref=landingpage_${plan}`;
+    const href = `/play/?plan=${plan}&server=${defaultServer}&ref=landingpage_${plan}`;
     return (
         <div className="flex gap-2">
             <a
