@@ -47,7 +47,7 @@ export default function RootLayout({
                 ></Script>
                 <Script 
                     data-site-id="1"
-                    src="https://play.2.thinkmay.net:446/api/script.js"
+                    src="https://saigon2.thinkmay.net:446/api/script.js"
                     defer
                 >
                 </Script>

@@ -14,7 +14,7 @@ export default function Page() {
 
     const submit = async () => {
         const supabase = createClient(
-            'https://play.2.thinkmay.net:445',
+            'https://saigon2.thinkmay.net:445',
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
         );
 
@@ -26,7 +26,7 @@ export default function Page() {
 
     const fetch = async () => {
         const supabase = createClient(
-            'https://play.2.thinkmay.net:445',
+            'https://saigon2.thinkmay.net:445',
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
         );
 
@@ -35,6 +35,8 @@ export default function Page() {
             .from('refund_request')
             .select('id,created_at,amount')
             .eq('user', email);
+
+        alert(email)
 
         if (err) throw new Error(err.message);
         else if (data.length > 0) return setStep('status');
