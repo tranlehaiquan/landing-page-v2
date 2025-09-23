@@ -36,7 +36,7 @@ export default function Page() {
             .select('id,created_at,amount')
             .eq('user', email);
 
-        alert(email)
+        alert(email);
 
         if (err) throw new Error(err.message);
         else if (data.length > 0) return setStep('status');

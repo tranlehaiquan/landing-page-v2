@@ -40,7 +40,7 @@ export default function RootLayout({
                     {children}
                     <Footer />
                 </StateProvider>
-                <Script 
+                <Script
                     data-site-id="1"
                     src="https://saigon2.thinkmay.net:446/api/script.js"
                     defer

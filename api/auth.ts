@@ -13,5 +13,5 @@ export const login = (
         .authWithOAuth2({
             provider: provider,
             urlCallback: (url) => redirectTo(url)
-        })
+        });
 };
