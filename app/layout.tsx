@@ -40,26 +40,11 @@ export default function RootLayout({
                     {children}
                     <Footer />
                 </StateProvider>
-                <Script
-                    async
-                    src="https://www.googletagmanager.com/gtag/js?id=G-M7MLPFDFXL"
-                    strategy="afterInteractive"
-                ></Script>
                 <Script 
                     data-site-id="1"
                     src="https://saigon2.thinkmay.net:446/api/script.js"
                     defer
-                >
-                </Script>
-                <Script strategy="afterInteractive">
-                    {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){window.dataLayer.push(arguments);}
-                    gtag('js', new Date());
-
-                    gtag('config', 'G-M7MLPFDFXL');
-                `}
-                </Script>
+                ></Script>
             </body>
         </html>
     );
