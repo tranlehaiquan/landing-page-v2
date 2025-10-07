@@ -1,0 +1,163 @@
+{
+    "Common": {
+        "toggleTheme": "Ganti tema",
+        "selectLanguage": "Pilih bahasa"
+    },
+    "Metadata": {
+        "title": "Thinkmay Cloud PC - Main Game di Cloud",
+        "description": "Bekerja dan bermain game di Cloud PC - tidak perlu mengunduh apapun, main game di semua perangkat, bekerja dari mana saja"
+    },
+    "Header": {
+        "homeTitle": "Beranda",
+        "pricingTitle": "Harga",
+        "faqTitle": "FAQ",
+        "logout": "Keluar",
+        "playNow": "Main Sekarang",
+        "login": "Masuk",
+        "refundPolicy": "Kebijakan Pengembalian Dana",
+        "openMenu": "Buka menu utama",
+        "closeMenu": "Tutup menu utama"
+    },
+    "Hero": {
+        "title": "Thinkmay CloudPC - Main Game di Cloud",
+        "description1": "Konfigurasi RTX 3060Ti, 16GB RAM",
+        "description2": "Main semua game high-end dengan grafis indah di perangkat apapun, hanya dengan koneksi internet",
+        "description3": "Berjalan sepenuhnya di browser Anda",
+        "button": "Mulai Sekarang"
+    },
+    "Feature": {
+        "title": "Masa Depan Gaming adalah Cloud Gaming",
+        "description": "Kenapa beli PC gaming kalau bisa langsung main game...",
+        "feature1Title": "Kapan saja, Di mana saja, Di perangkat apa saja",
+        "feature1Description": "Tunggu, apa? Main game AAA di ponsel dan laptop?\nSekarang kamu bisa main di kafe atau di tempat tidur?",
+        "feature2Title": "Tanpa Menunggu, Langsung Main, Dioptimalkan Total",
+        "feature2Description": "Game sudah terpasang? Tidak perlu cari lokalisasi?\nDan tidak perlu atur setting? Semuanya sudah optimal?",
+        "link": "Pelajari lebih lanjut tentang CloudPC"
+    },
+    "SocialProof": {
+        "title": "Produk yang Dipercaya",
+        "subtitle": "Thinkmay CloudPC sudah digunakan oleh 60k++ pengguna",
+        "legality": "Jelajahi Panduan Legalitas",
+        "trust": "Kunjungi Pusat Kepercayaan",
+        "infrastructure": {
+            "title": "Infrastruktur selalu siap",
+            "description": "Server stabil, latensi di bawah 100ms, koneksi cepat"
+        },
+        "users": {
+            "title": "60K+ Pengguna",
+            "description": "Lebih dari 60 ribu orang telah mendaftar"
+        },
+        "coverage": {
+            "title": "Cakupan luas",
+            "description": "Thinkmay CloudPC memiliki server di wilayah utara dan selatan"
+        },
+        "guarantee": {
+            "title": "Jaminan uang kembali",
+            "description": "Hingga 5 hari pertama, jika produk tidak memenuhi harapan."
+        }
+    },
+    "CTA": {
+        "title": "Mulai gunakan Thinkmay CloudPC sekarang",
+        "description": "Atau kirim pesan ke support untuk uji coba gratis",
+        "button": "Mulai Sekarang"
+    },
+    "Applications": {
+        "title": "Game Populer di Thinkmay",
+        "description": "Thinkmay CloudPC memiliki perpustakaan game yang beragam dan kaya,\ndan kamu juga bisa mengunggah game favoritmu atau memasang mod dan kustomisasi",
+        "description1": "Thinkmay CloudPC memiliki perpustakaan game yang beragam dan kaya,",
+        "description2": "kamu juga bisa mengunggah game favoritmu atau memasang mod dan kustomisasi",
+        "tagNew": "Game Baru",
+        "buttonPlay": "Main Sekarang",
+        "buttonSupport": "Penerbit"
+    },
+    "Footer": {
+        "description": "Thinkmay CloudPC membantu Anda main game di semua perangkat tanpa instalasi",
+        "company": "Perusahaan",
+        "help": "Pusat Bantuan",
+        "contact": "Hubungi Kami",
+        "legal": "Legalitas",
+        "allRightsReserved": "Seluruh Hak Dilindungi."
+    },
+    "FAQ": {
+        "title": "Pertanyaan yang Sering Diajukan",
+        "description": "Kamu dapat menghubungi dukungan pengguna jika memiliki pertanyaan lain",
+        "questions": {
+            "q1": "Apa itu Thinkmay Cloud PC?",
+            "a1": "Thinkmay Cloud PC adalah layanan komputer pribadi virtual yang disediakan melalui cloud...",
+            "q2": "Bisakah saya menginstal perangkat lunak di Thinkmay Cloud PC?",
+            "a2": "Ya, kamu bisa menginstal dan menggunakan perangkat lunak di Thinkmay Cloud PC seperti komputer biasa...",
+            "q3": "Perangkat apa saja yang dapat menggunakan Cloud PC? Apakah saya perlu perangkat khusus?",
+            "a3": "Semua perangkat pintar dengan koneksi internet dapat menggunakan Cloud PC...",
+            "q4": "Game apa saja yang bisa dimainkan di Thinkmay?",
+            "a4": "Sebagian besar game bisa dimainkan di Thinkmay, kecuali beberapa game online seperti LOL, PUBG, Valorant...",
+            "q5": "Bisakah saya mencoba terlebih dahulu? Bagaimana caranya?",
+            "a5": "Kamu bisa mengunjungi situs web dan menghubungi dukungan untuk meminta demo atau uji coba...",
+            "q6": "Berapa lama setelah pembayaran saya bisa menggunakan Thinkmay CloudPC?",
+            "a6": "Sistem akan mengonfirmasi secara otomatis, biasanya dalam waktu 3–5 menit setelah pembayaran...",
+            "q7": "Apa kebijakan pengembalian dana Thinkmay jika terjadi kesalahan?",
+            "a7": "Thinkmay menawarkan pengembalian dana hingga 80% dalam 5 hari dan 3 jam pertama jika kesalahan berasal dari Thinkmay...",
+            "q8": "Apa yang harus saya lakukan jika mengalami lag atau error?",
+            "a8": "Periksa koneksi internetmu. Gunakan kabel Ethernet jika memungkinkan untuk mengurangi lag...",
+            "q9": "Bagaimana cara mengoptimalkan koneksi jaringan?",
+            "a9": "Pilih server yang paling dekat dengan lokasi kamu untuk mengurangi latency...",
+            "q10": "Bagaimana cara mengoptimalkan FPS dalam game?",
+            "a10": "Turunkan pengaturan grafis dan matikan efek yang tidak perlu dalam game...",
+            "q11": "Bagaimana jika semua cara di atas tidak berhasil?",
+            "a11": "Terakhir, hubungi dukungan Thinkmay untuk memeriksa kembali sistem..."
+        }
+    },
+    "Pricing": {
+        "noWaitingLine": "Tanpa antrean",
+        "multipleCluster": "Selalu tersedia server cadangan",
+        "timeUnlimited": "Batas waktu bermain",
+        "storageLimitNone": "Batas penyimpanan maksimum",
+        "refundDay": "Pengembalian dalam",
+        "refundTime": "Pengembalian dalam",
+        "timeLimit": "Maksimal",
+        "storageLimit": "Maksimal",
+        "suffixes": {
+            "day": "hari pertama",
+            "hourPlay": "jam pertama bermain",
+            "hourUsage": "jam penggunaan",
+            "storage": "penyimpanan",
+            "storageCredit": "kredit penyimpanan"
+        }
+    },
+    "Refund": {
+        "policy": "Kebijakan Pengembalian Dana",
+        "contactUs": "Butuh bantuan? Hubungi kami",
+        "description": "Thinkmay berkomitmen untuk memberikan pengalaman layanan CloudPC terbaik. Jika Anda tidak puas karena alasan apa pun, kami siap mendukung dan mengembalikan 80% sesuai dengan ketentuan berikut:",
+        "packages": {
+            "package499K": "Paket 499K",
+            "package299K": "Paket 299K",
+            "package199K": "Paket 199K"
+        },
+        "requestTime": "Waktu permintaan: Dalam {x} hari sejak aktivasi.",
+        "totalUsage": "Total waktu penggunaan: kurang dari {y} jam.",
+        "processTitle": "Proses Permintaan Pengembalian Dana:",
+        "steps": {
+            "step1": "Hubungi melalui Fanpage resmi.",
+            "step2": "Berikan informasi akun dan alasan permintaan refund.",
+            "step3": "Permintaan akan diproses dalam 2 hari kerja."
+        },
+        "note": "Catatan: Kebijakan ini tidak berlaku untuk pelanggaran syarat layanan atau kesalahan yang disengaja. Silakan coba layanan gratis sebelum membeli!"
+    },
+    "Auth": {
+        "loginTitle": "Masuk ke Thinkmay",
+        "loginButton": "Masuk",
+        "signupButton": "Daftar",
+        "emailLabel": "Email",
+        "emailPlaceholder": "name@gmail.com",
+        "passwordLabel": "Kata Sandi",
+        "passwordPlaceholder": "••••••••",
+        "repeatPasswordLabel": "Ulangi Kata Sandi",
+        "googleLogin": "Google",
+        "termsAgreement1": "Saya setuju dengan semua",
+        "termsAgreement2": "dan",
+        "termsLink": "Syarat",
+        "privacyPolicyLink": "Kebijakan Privasi",
+        "alreadyHaveAccount": "Saya sudah memiliki akun",
+        "dontHaveAccount": "Saya belum memiliki akun",
+        "emailValidationError": "Email harus memiliki @gmail.com"
+    }
+}

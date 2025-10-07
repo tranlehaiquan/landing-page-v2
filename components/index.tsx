@@ -1,7 +1,14 @@
 'use client';
 
-import { Contents } from './locales';
-import { useLanguage } from './providers/stateProvider';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { Link } from '@/i18n/routing';
+import screenshot from '@/public/img/screenshoot_store.png';
+
+export { LanguageSwitcher } from './LanguageSwitcher';
+export { Header } from './Header';
+export { ThemeProvider } from './providers/themeProvider';
+export { ThemeToggle } from './ThemeToggle';
 
 const ExternalURL = {
     facebook: 'https://www.facebook.com/thinkonmay',
@@ -11,29 +18,29 @@ const ExternalURL = {
 };
 
 export const Hero = () => {
-    const { t } = useLanguage();
+    const t = useTranslations('Hero');
 
     return (
         <section className="bg-white dark:bg-mica ">
             <div className="max-w-screen-xl px-4 pt-8 mx-auto text-center lg:pt-16 lg:px-12">
                 <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                    {t(Contents.HERO_H1)}
+                    {t('title')}
                 </h1>
                 <p className="mb-8 text-gray-500 md:text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 font-medium">
                     <span className="font-bold text-white text-2xl">
-                        {t(Contents.HERO_MAIN_P1)}
+                        {t('description1')}
                     </span>
                     <br />
-                    {t(Contents.HERO_MAIN_P2)}
+                    {t('description2')}
                     <br />
-                    {t(Contents.HERO_MAIN_P3)}
+                    {t('description3')}
                 </p>
                 <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                     <a
                         href="/play/?app=null&ref=landingpage_heroplay"
                         className="inline-flex items-center justify-center px-5 py-3 text-2xl font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
                     >
-                        {t(Contents.HERO_MAIN_BUTTON)}
+                        {t('button')}
                     </a>
                     {/* <a
                         href="/pricing"
@@ -54,14 +61,14 @@ export const Hero = () => {
                         </svg>
                     </a> */}
                 </div>
-                <img
+                <Image
                     className="mx-auto mb-5 lg:mb-8 border border-gray-200 rounded-lg shadow-xl dark:border-gray-600 z-1 dark:hidden"
-                    src="/img/screenshoot_store.png"
+                    src={screenshot}
                     alt="demo image for thinkmay"
                 />
-                <img
+                <Image
                     className="mx-auto mb-5 lg:mb-8 border border-gray-200 rounded-lg shadow-xl dark:border-gray-600 hidden dark:block z-1"
-                    src="/img/screenshoot_store.png"
+                    src={screenshot}
                     alt="demo image for thinkmay"
                 />
             </div>
@@ -125,32 +132,32 @@ export const Hero = () => {
 };
 
 export const Feature = () => {
-    const { t } = useLanguage();
+    const t = useTranslations('Feature');
 
     return (
         <section className="bg-white dark:bg-mica mb-[128px]">
             <div className="py-8 px-4 mx-auto max-w-screen-xl text-center sm:py-16 lg:px-6">
                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                    {t(Contents.FEATURE_TITLE)}
+                    {t('title')}
                 </h2>
                 <p className="text-gray-500 sm:text-xl dark:text-gray-400 lg:px-48">
-                    {t(Contents.FEATURE_DESC)}
+                    {t('description')}
                 </p>
                 <div className="mt-8 lg:mt-16 mb-8 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
                     <div>
                         <h3 className="mb-4 text-2xl font-bold dark:text-white">
-                            {t(Contents.FEATURE_1_TITLE)}
+                            {t('feature1Title')}
                         </h3>
                         <p className="mb-4 text-gray-500 dark:text-gray-400">
-                            {t(Contents.FEATURE_1_DESC)}
+                            {t('feature1Description')}
                         </p>
                     </div>
                     <div>
                         <h3 className="mb-4 text-2xl font-bold dark:text-white">
-                            {t(Contents.FEATURE_2_TITLE)}
+                            {t('feature2Title')}
                         </h3>
                         <p className="mb-4 text-gray-500 dark:text-gray-400">
-                            {t(Contents.FEATURE_2_DESC)}
+                            {t('feature2Description')}
                         </p>
                     </div>
                 </div>
@@ -159,7 +166,7 @@ export const Feature = () => {
                         href="/faq"
                         className="inline-flex items-center font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400"
                     >
-                        {t(Contents.FEATURE_LINK)}
+                        {t('link')}
                         <svg
                             className="ml-1 w-5 h-5"
                             fill="currentColor"
@@ -175,62 +182,64 @@ export const Feature = () => {
 };
 
 export const Preview = () => (
-    <img
+    <Image
         className="w-full mt-[256px] mb-[256px] hidden sm:block"
         alt="demo image for thinkmay"
         src="/img/macbook_mockup.png"
+        width={1200}
+        height={800}
     />
 );
 
 export const SocialProof = () => {
-    const { t } = useLanguage();
+    const t = useTranslations('SocialProof');
 
     return (
         <section className="bg-white dark:bg-mica mb-[256px] mt-[256px]">
             <div className="items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-16 lg:px-6">
                 <div className="col-span-2 mb-8">
                     <p className="text-lg font-medium text-primary-600 dark:text-primary-500">
-                        {t(Contents.SOCIALPROOF_TITLE)}
+                        {t('title')}
                     </p>
                     <h2 className="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl dark:text-white">
-                        {t(Contents.SOCIALPROOF_SUBTITLE)}
+                        {t('subtitle')}
                     </h2>
                     <div className="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
                         <div>
-                            <a
+                            <Link
                                 href="/legal"
                                 className="inline-flex items-center text-base font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
                             >
-                                {t(Contents.SOCIALPROOF_LEGALITY)}
-                            </a>
+                                {t('legality')}
+                            </Link>
                         </div>
                         <div>
-                            <a
+                            <Link
                                 href="/legal"
                                 className="inline-flex items-center text-base font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
                             >
-                                {t(Contents.SOCIALPROOF_TRUST)}
-                            </a>
+                                {t('trust')}
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
                     {[
                         {
-                            title: t(Contents.SOCIALPROOF_1_TITLE),
-                            desc: t(Contents.SOCIALPROOF_1_DESC)
+                            title: t('infrastructure.title'),
+                            desc: t('infrastructure.description')
                         },
                         {
-                            title: t(Contents.SOCIALPROOF_2_TITLE),
-                            desc: t(Contents.SOCIALPROOF_2_DESC)
+                            title: t('users.title'),
+                            desc: t('users.description')
                         },
                         {
-                            title: t(Contents.SOCIALPROOF_3_TITLE),
-                            desc: t(Contents.SOCIALPROOF_3_DESC)
+                            title: t('coverage.title'),
+                            desc: t('coverage.description')
                         },
                         {
-                            title: t(Contents.SOCIALPROOF_4_TITLE),
-                            desc: t(Contents.SOCIALPROOF_4_DESC)
+                            title: t('guarantee.title'),
+                            desc: t('guarantee.description')
                         }
                     ].map((item, index) => (
                         <div key={index}>
@@ -249,33 +258,37 @@ export const SocialProof = () => {
 };
 
 export const CTA = () => {
-    const { t } = useLanguage();
+    const t = useTranslations('CTA');
 
     return (
         <section className="bg-white dark:bg-mica mt-[128px] mb-[128px]">
             <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-                <img
+                <Image
                     className="w-full dark:hidden"
                     src="/img/macbook_empty.png"
                     alt="demo image for thinkmay"
+                    width={600}
+                    height={400}
                 />
-                <img
+                <Image
                     className="w-full hidden dark:block"
                     src="/img/macbook_empty.png"
                     alt="demo image for thinkmay"
+                    width={600}
+                    height={400}
                 />
                 <div className="mt-4 md:mt-0">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                        {t(Contents.CTA_TITLE)}
+                        {t('title')}
                     </h2>
                     <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-                        {t(Contents.CTA_DESC)}
+                        {t('description')}
                     </p>
                     <a
                         href="/play/?app=null&ref=landingpage_footerplay"
                         className="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
                     >
-                        {t(Contents.CTA_BUTTON)}
+                        {t('button')}
                         <svg
                             className="ml-2 -mr-1 w-5 h-5"
                             fill="currentColor"
@@ -291,7 +304,7 @@ export const CTA = () => {
 };
 
 export const Footer = () => {
-    const { t } = useLanguage();
+    const t = useTranslations('Footer');
 
     return (
         <footer className="bg-gray-50 dark:bg-gray-800">
@@ -302,20 +315,24 @@ export const Footer = () => {
                             href="/play/?app=null&ref=landingpage"
                             className="flex items-center mb-2 text-2xl font-semibold text-gray-900 sm:mb-0 dark:text-white"
                         >
-                            <img
+                            <Image
                                 src="/img/logo_white.png"
                                 className="mr-3 h-6 sm:h-9 hidden dark:block"
                                 alt="thinkmay logo"
+                                width={36}
+                                height={36}
                             />
-                            <img
+                            <Image
                                 src="/img/logo.png"
                                 className="mr-3 h-6 sm:h-9 dark:hidden"
                                 alt="thinkmay logo"
+                                width={36}
+                                height={36}
                             />
                             Thinkmay
                         </a>
                         <p className="my-4 font-light text-gray-500 dark:text-gray-400">
-                            {t(Contents.FOOTER_DESC)}
+                            {t('description')}
                         </p>
                         {/* Socials */}
                         <ul className="flex mt-5 space-x-6">
@@ -348,7 +365,7 @@ export const Footer = () => {
                     {/* Company */}
                     <div className="lg:mx-auto">
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                            {t(Contents.FOOTER_COMPANY)}
+                            {t('company')}
                         </h2>
                         <ul className="text-gray-500 dark:text-gray-400">
                             {['About', 'Careers', 'Brand Center', 'Blog'].map(
@@ -369,7 +386,7 @@ export const Footer = () => {
                     {/* Help */}
                     <div className="lg:mx-auto">
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                            {t(Contents.FOOTER_HELP)}
+                            {t('help')}
                         </h2>
                         <ul className="text-gray-500 dark:text-gray-400">
                             <li className="mb-4">
@@ -401,7 +418,7 @@ export const Footer = () => {
                                     href={ExternalURL.facebook}
                                     className="hover:underline"
                                 >
-                                    {t(Contents.FOOTER_CONTACT)}
+                                    {t('contact')}
                                 </a>
                             </li>
                         </ul>
@@ -410,7 +427,7 @@ export const Footer = () => {
                     {/* Legal */}
                     <div className="lg:mx-auto">
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                            {t(Contents.FOOTER_LEGAL)}
+                            {t('legal')}
                         </h2>
                         <ul className="text-gray-500 dark:text-gray-400">
                             {['Privacy Policy', 'Licensing', 'Terms'].map(
@@ -437,45 +454,47 @@ export const Footer = () => {
                     >
                         Thinkmay
                     </a>
-                    . {t(Contents.ALL_RIGHTS_RESERVED)}
+                    . {t('allRightsReserved')}
                 </span>
             </div>
         </footer>
     );
 };
 
-export const qa: [Contents, Contents][][] = [
+export const qa: [string, string][][] = [
     [
-        [Contents.FAQ_Q1, Contents.FAQ_A1],
-        [Contents.FAQ_Q2, Contents.FAQ_A2],
-        [Contents.FAQ_Q3, Contents.FAQ_A3],
-        [Contents.FAQ_Q4, Contents.FAQ_A4]
+        ['q1', 'a1'],
+        ['q2', 'a2'],
+        ['q3', 'a3'],
+        ['q4', 'a4']
     ],
     [
-        [Contents.FAQ_Q5, Contents.FAQ_A5],
-        [Contents.FAQ_Q6, Contents.FAQ_A6],
-        [Contents.FAQ_Q7, Contents.FAQ_A7]
+        ['q5', 'a5'],
+        ['q6', 'a6'],
+        ['q7', 'a7']
     ],
     [
-        [Contents.FAQ_Q8, Contents.FAQ_A8],
-        [Contents.FAQ_Q9, Contents.FAQ_A9],
-        [Contents.FAQ_Q10, Contents.FAQ_A10],
-        [Contents.FAQ_Q11, Contents.FAQ_A11]
+        ['q8', 'a8'],
+        ['q9', 'a9'],
+        ['q10', 'a10'],
+        ['q11', 'a11']
     ]
 ];
 
 export const FAQ = () => {
-    const { t } = useLanguage();
+    const t = useTranslations('FAQ');
 
     const renderQA = (
-        [questionKey, answerKey]: [Contents, Contents],
+        [questionKey, answerKey]: [string, string],
         index: number
     ) => (
         <div key={index} className="mb-10">
             <h3 className="mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                {t(questionKey)}
+                {t(`questions.${questionKey}`)}
             </h3>
-            <p className="text-gray-500 dark:text-gray-400">{t(answerKey)}</p>
+            <p className="text-gray-500 dark:text-gray-400">
+                {t(`questions.${answerKey}`)}
+            </p>
         </div>
     );
 
@@ -484,10 +503,10 @@ export const FAQ = () => {
             <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-lg text-center">
                     <h2 className="mb-2 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                        {t(Contents.FAQ_TITLE_1)}
+                        {t('title')}
                     </h2>
                     <p className="mb-8 text-gray-500 lg:text-lg dark:text-gray-400">
-                        {t(Contents.FAQ_DESC)}
+                        {t('description')}
                     </p>
                 </div>
 

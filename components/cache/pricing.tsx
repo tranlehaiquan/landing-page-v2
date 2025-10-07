@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { createSupabaseClient } from '@/utils/supabase';
 import { cacheLife } from 'next/dist/server/use-cache/cache-life';
 
 type Plan = {
@@ -268,10 +268,7 @@ const subcontents = [
 export const FetchPricing = async (): Promise<Plan[]> => {
     'use cache';
     cacheLife('hours');
-    const supabase = createClient(
-        'https://saigon2.thinkmay.net:445',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
-    );
+    const supabase = createSupabaseClient();
 
     const { data, error } = await supabase
         .from('plans')
@@ -344,10 +341,7 @@ type Domain = {
 const fetchDomain = async (): Promise<Domain[]> => {
     'use cache';
     cacheLife('hours');
-    const supabase = createClient(
-        'https://saigon2.thinkmay.net:445',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
-    );
+    const supabase = createSupabaseClient();
     const { data: domains_v3, error: err } = await supabase.rpc(
         'get_domains_availability_v5'
     );
@@ -426,7 +420,7 @@ export const Pricing = async () => {
                     className="space-y-4 text-left text-gray-900 dark:text-gray-400 mt-12"
                 >
                     {Object.keys(plan.bonus).map((key, idx) => {
-                        var Obj = (Addon as any)[key];
+                        const Obj = (Addon as any)[key];
                         return Obj != undefined ? (
                             <Obj key={idx} value={plan.bonus[key]} />
                         ) : null;
