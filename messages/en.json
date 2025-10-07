@@ -1,0 +1,163 @@
+{
+    "Common": {
+        "toggleTheme": "Toggle theme",
+        "selectLanguage": "Select language"
+    },
+    "Metadata": {
+        "title": "Thinkmay Cloud PC - Play Games on Cloud",
+        "description": "Work and game on Cloud PC - no need to download anything, games on any devices, work from anywhere"
+    },
+    "Header": {
+        "homeTitle": "Home",
+        "pricingTitle": "Pricing",
+        "faqTitle": "FAQ",
+        "logout": "Logout",
+        "playNow": "Play Now",
+        "login": "Login",
+        "refundPolicy": "Refund Policy",
+        "openMenu": "Open main menu",
+        "closeMenu": "Close main menu"
+    },
+    "Hero": {
+        "title": "Thinkmay CloudPC - Play Games on Cloud",
+        "description1": "RTX 3060Ti, 16GB RAM Configuration",
+        "description2": "Play all high-end games with beautiful graphics on any device, just with internet connection",
+        "description3": "Works entirely in your browser",
+        "button": "Get Started Now"
+    },
+    "Feature": {
+        "title": "The Future of Gaming is Cloud Gaming",
+        "description": "Why buy a gaming PC when you can just play games...",
+        "feature1Title": "Anytime, Anywhere, Any Device",
+        "feature1Description": "Wait, what? Playing AAA games on phone and laptop?\nSo now you can play AAA games even at cafe or on bed?",
+        "feature2Title": "No Waiting, Just Play, Fully Optimized",
+        "feature2Description": "Games are pre-installed? No need to look for localization?\nAnd no need to tweak settings? Everything is pre-optimized?",
+        "link": "Learn more about CloudPC"
+    },
+    "SocialProof": {
+        "title": "A Trusted Product",
+        "subtitle": "Thinkmay CloudPC has 60k++ users",
+        "legality": "Explore Legality Guide",
+        "trust": "Visit the Trust Center",
+        "infrastructure": {
+            "title": "Infrastructure always ready",
+            "description": "Stable servers, latency under 100ms, fast connections"
+        },
+        "users": {
+            "title": "60K+ Users",
+            "description": "Over 60 thousand people have registered"
+        },
+        "coverage": {
+            "title": "Wide coverage",
+            "description": "Thinkmay CloudPC has servers in both northern and southern regions"
+        },
+        "guarantee": {
+            "title": "Money-back guarantee",
+            "description": "Up to the first 5 days, if the product does not meet expectations."
+        }
+    },
+    "CTA": {
+        "title": "Start using Thinkmay CloudPC now",
+        "description": "Or message support for a free trial",
+        "button": "Get Started"
+    },
+    "Applications": {
+        "title": "Popular Games on Thinkmay",
+        "description": "Thinkmay CloudPC offers a diverse and rich game library,\nand you can also upload your favorite games or install mods and customizations",
+        "description1": "Thinkmay CloudPC offers a diverse and rich game library,",
+        "description2": "you can also upload your favorite games or install mods and customizations",
+        "tagNew": "New Game",
+        "buttonPlay": "Play Now",
+        "buttonSupport": "Publisher"
+    },
+    "Footer": {
+        "description": "Thinkmay CloudPC helps you play games on any device without installation",
+        "company": "Company",
+        "help": "Help Center",
+        "contact": "Contact Us",
+        "legal": "Legal",
+        "allRightsReserved": "All Rights Reserved."
+    },
+    "FAQ": {
+        "title": "Frequently Asked Questions",
+        "description": "You can message our customer support if you have other questions",
+        "questions": {
+            "q1": "What is Thinkmay Cloud PC?",
+            "a1": "Thinkmay Cloud PC is a virtual personal computer service provided via the cloud...",
+            "q2": "Can I install software on Thinkmay Cloud PC?",
+            "a2": "Yes, you can install and use software on Thinkmay Cloud PC just like a regular computer...",
+            "q3": "Which devices can use Cloud PC? Do I need special hardware?",
+            "a3": "Any smart device with an internet connection can use Cloud PC...",
+            "q4": "Which games can be played on Thinkmay?",
+            "a4": "Most games are playable on Thinkmay, except for some online games like LOL, PUBG, Valorant...",
+            "q5": "Can I try it first? How?",
+            "a5": "You can visit the website and contact support to request a trial or demo...",
+            "q6": "How long after payment can I use Thinkmay CloudPC?",
+            "a6": "The system confirms automatically, usually within 3–5 minutes after successful payment...",
+            "q7": "What is Thinkmay's refund policy if there are errors?",
+            "a7": "Thinkmay offers up to 80% refund within 5 days and 3 hours of usage if the error is from Thinkmay...",
+            "q8": "What should I do if I experience lag or errors?",
+            "a8": "Check your internet connection. Use Ethernet instead of Wi-Fi for lower latency...",
+            "q9": "How to optimize network performance?",
+            "a9": "Choose the server closest to your location to reduce latency...",
+            "q10": "How to optimize FPS in games?",
+            "a10": "Lower graphics settings and disable unnecessary effects in the game...",
+            "q11": "What if none of the above methods work?",
+            "a11": "Finally, contact Thinkmay's support team to check the system..."
+        }
+    },
+    "Pricing": {
+        "noWaitingLine": "No waiting line",
+        "multipleCluster": "Always has backup server",
+        "timeUnlimited": "Limited play time",
+        "storageLimitNone": "Storage limit",
+        "refundDay": "Refund within first",
+        "refundTime": "Refund within first",
+        "timeLimit": "Up to",
+        "storageLimit": "Up to",
+        "suffixes": {
+            "day": "days",
+            "hourPlay": "h of play",
+            "hourUsage": "h of usage",
+            "storage": "GB storage",
+            "storageCredit": "storage credit"
+        }
+    },
+    "Refund": {
+        "policy": "Refund Policy",
+        "contactUs": "Need help? Contact us",
+        "description": "Thinkmay is committed to providing the best CloudPC service experience. If you are dissatisfied for any reason, we are ready to support and refund 80% under the following conditions:",
+        "packages": {
+            "package499K": "499K Package",
+            "package299K": "299K Package",
+            "package199K": "199K Package"
+        },
+        "requestTime": "Request time: Within {x} days from activation.",
+        "totalUsage": "Total usage time: under {y} hours.",
+        "processTitle": "Refund Request Process:",
+        "steps": {
+            "step1": "Contact us via official Fanpage.",
+            "step2": "Provide account details and refund reason.",
+            "step3": "The request will be processed within 2 business days."
+        },
+        "note": "Note: The policy does not apply to violations of service terms or intentional faults. Please try the free service before making a purchase!"
+    },
+    "Auth": {
+        "loginTitle": "Login to Thinkmay",
+        "loginButton": "Login",
+        "signupButton": "Sign up",
+        "emailLabel": "Email",
+        "emailPlaceholder": "name@gmail.com",
+        "passwordLabel": "Password",
+        "passwordPlaceholder": "••••••••",
+        "repeatPasswordLabel": "Repeat Password",
+        "googleLogin": "Google",
+        "termsAgreement1": "I agree to all the",
+        "termsAgreement2": "and",
+        "termsLink": "Terms",
+        "privacyPolicyLink": "Privacy Policy",
+        "alreadyHaveAccount": "I already have an account",
+        "dontHaveAccount": "I don't have an account",
+        "emailValidationError": "Email must have @gmail.com"
+    }
+}

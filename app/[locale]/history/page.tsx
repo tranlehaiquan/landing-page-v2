@@ -1,6 +1,8 @@
 'use client';
 import { info, loggedin } from '@/api/auth';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createSupabaseClient } from '@/utils/supabase';
+import { SupabaseClient } from '@supabase/supabase-js';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 export type PlanName =
@@ -18,29 +20,6 @@ interface Deposit {
     created_at: string;
     id: number;
 }
-interface Order {
-    id: string;
-    pay_at: string;
-    plan_name: PlanName;
-}
-
-type RefundRequest = {
-    id: number;
-    created_at: string;
-    amount: string;
-};
-
-interface DepositStatus {
-    created_at: string;
-    amount: number;
-    status: string;
-}
-
-interface PlanStatus {
-    created_at: string;
-    amount: number;
-    plan_name: string;
-}
 
 export default function Page() {
     const [loggedIn, setloggedIn] = useState(false);
@@ -49,12 +28,7 @@ export default function Page() {
     const [depositHistory, setDepositHistory] = useState<Deposit[]>([]);
 
     useEffect(() => {
-        setSupabase(
-            createClient(
-                'https://saigon2.thinkmay.net:445',
-                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
-            )
-        );
+        setSupabase(createSupabaseClient());
 
         const i = setInterval(() => {
             const loggedIn = loggedin();
@@ -70,37 +44,6 @@ export default function Page() {
         };
     }, []);
 
-    const fetch_refund_request = async (email: string) => {
-        if (supabase == null) return [];
-        const { data, error: err } = await supabase
-            .from('refund_request')
-            .select('id,created_at,amount')
-            .eq('user', email);
-        if (err) return err;
-        return data;
-    };
-
-    const fetch_payment_pocket = async (email: string) => {
-        if (supabase == null) return [];
-        const { data, error: error } = await supabase.rpc(
-            'get_payment_pocket',
-            {
-                email
-            }
-        );
-        if (error) throw error;
-        return data;
-    };
-
-    const fetch_pocket_balance = async (email: string) => {
-        if (supabase == null) return [];
-        const { error, data } = await supabase.rpc('get_pocket_balance', {
-            email
-        });
-        if (error) throw error;
-        return data;
-    };
-
     const fetch_deposit_history = async (email: string) => {
         if (supabase == null) return [];
         const { error, data } = await supabase.rpc('get_deposit_history', {
@@ -108,14 +51,6 @@ export default function Page() {
         });
         if (error) throw error;
         return data as Deposit[];
-    };
-    const fetch_payment_history = async (email: string) => {
-        if (supabase == null) return [];
-        const { error, data } = await supabase.rpc('get_payment_history', {
-            email: email
-        });
-        if (error) throw error;
-        return data;
     };
 
     const fetch_all = async (email: string) => {
@@ -295,10 +230,12 @@ export default function Page() {
                             <span className="sr-only">Open user menu</span>
                             <div className="flex w-full items-center justify-between">
                                 <div className="flex items-center">
-                                    <img
+                                    <Image
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                                         className="mr-3 h-8 w-8 rounded-md"
                                         alt="Bonnie avatar"
+                                        width={32}
+                                        height={32}
                                     />
                                     <div className="text-left">
                                         <div className="mb-0.5 font-semibold leading-none text-gray-900 dark:text-white">
@@ -337,10 +274,12 @@ export default function Page() {
                                 href="#"
                                 className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                             >
-                                <img
+                                <Image
                                     src="/img/logo.png"
                                     className="mr-3 h-8 w-8 rounded"
                                     alt="Michael avatar"
+                                    width={32}
+                                    height={32}
                                 />
                                 <div className="text-left">
                                     <div className="mb-0.5 font-semibold leading-none text-gray-900 dark:text-white">

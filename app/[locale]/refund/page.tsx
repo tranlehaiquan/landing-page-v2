@@ -1,7 +1,7 @@
 'use client';
 
 import { info, loggedin } from '@/api/auth';
-import { createClient } from '@supabase/supabase-js';
+import { createSupabaseClient } from '@/utils/supabase';
 import { useEffect, useRef, useState } from 'react';
 import RefundPolicy_page from './policy/page';
 export default function Page() {
@@ -13,10 +13,7 @@ export default function Page() {
     }, []);
 
     const submit = async () => {
-        const supabase = createClient(
-            'https://saigon2.thinkmay.net:445',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
-        );
+        const supabase = createSupabaseClient();
 
         await supabase.rpc('create_refund_request', {
             email: info()?.email,
@@ -25,10 +22,7 @@ export default function Page() {
     };
 
     const fetch = async () => {
-        const supabase = createClient(
-            'https://saigon2.thinkmay.net:445',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU0OTMxNjAwLCJleHAiOjE5MTI2OTgwMDB9.m7qcf4j3u1oPoqIsCqU3JHqYEO0DV2PmoPXGcdUAdR8'
-        );
+        const supabase = createSupabaseClient();
 
         const email = info()?.email;
         const { data, error: err } = await supabase
@@ -84,7 +78,7 @@ export default function Page() {
         refund_usage: 0
     };
 
-    const { total_usage, last_payment, plan_name } = subscription ?? {
+    const { total_usage, last_payment } = subscription ?? {
         total_usage: 999,
         last_payment: now,
         plan_name: 'month'

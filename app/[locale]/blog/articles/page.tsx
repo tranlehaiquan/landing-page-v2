@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Article() {
     return (
         <>
@@ -706,9 +708,11 @@ export default function Article() {
                             with the utility classes from Tailwind CSS.
                         </p>
                         <figure>
-                            <img
+                            <Image
                                 src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png"
                                 alt=""
+                                width={600}
+                                height={400}
                             />
                             <figcaption>Digital art by Anonymous</figcaption>
                         </figure>
@@ -831,9 +835,11 @@ export default function Article() {
                             <li>Diagonal stress in the strokes</li>
                             <li>Slanted serifs on lower-case ascenders</li>
                         </ul>
-                        <img
+                        <Image
                             src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png"
                             alt=""
+                            width={600}
+                            height={400}
                         />
                         <ol>
                             <li>Low contrast between thick and thin strokes</li>
@@ -995,10 +1001,12 @@ export default function Article() {
                             </div>
                             <div className="flex">
                                 <div className="mr-3 shrink-0 hidden sm:block">
-                                    <img
+                                    <Image
                                         className="w-9 h-9 rounded-full"
                                         src="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
                                         alt="Michael Burry"
+                                        width={36}
+                                        height={36}
                                     />
                                 </div>
                                 <form className="mb-6 w-full">
@@ -1230,11 +1238,13 @@ export default function Article() {
                                                 href="#"
                                                 className="flex items-center"
                                             >
-                                                <img
-                                                    className="mr-2 w-6 h-6 rounded-full"
-                                                    src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-                                                    alt="Bonnie Green"
-                                                />
+                                                                                                    <Image
+                                                        className="mr-2 w-6 h-6 rounded-full"
+                                                        src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+                                                        alt="Bonnie Green"
+                                                        width={24}
+                                                        height={24}
+                                                    />
                                                 <p className="inline-flex flex-col md:flex-row items-start mr-3 font-semibold text-sm text-gray-900 dark:text-white">
                                                     <span>Bonnie Green</span>
                                                     <time
@@ -1354,11 +1364,13 @@ export default function Article() {
                                                 href="#"
                                                 className="flex items-center"
                                             >
-                                                <img
-                                                    className="mr-2 w-6 h-6 rounded-full"
-                                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                                    alt="Jese Leos"
-                                                />
+                                                                                                    <Image
+                                                        className="mr-2 w-6 h-6 rounded-full"
+                                                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                                        alt="Jese Leos"
+                                                        width={24}
+                                                        height={24}
+                                                    />
                                                 <p className="inline-flex flex-col md:flex-row items-start mr-3 font-semibold text-sm text-gray-900 dark:text-white">
                                                     <span>Jese Leos</span>
                                                     <time
@@ -1476,10 +1488,12 @@ export default function Article() {
                                                 href="#"
                                                 className="flex items-center"
                                             >
-                                                <img
+                                                <Image
                                                     className="mr-2 w-6 h-6 rounded-full"
                                                     src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                                                     alt="Danny Hart"
+                                                    width={24}
+                                                    height={24}
                                                 />
                                                 <p className="inline-flex flex-col md:flex-row items-start mr-3 font-semibold text-sm text-gray-900 dark:text-white">
                                                     <span>Danny Hart</span>
@@ -1603,11 +1617,13 @@ export default function Article() {
                                                 href="#"
                                                 className="flex items-center"
                                             >
-                                                <img
-                                                    className="mr-2 w-6 h-6 rounded-full"
-                                                    src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-                                                    alt="Bonnie Green"
-                                                />
+                                                                                                    <Image
+                                                        className="mr-2 w-6 h-6 rounded-full"
+                                                        src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+                                                        alt="Bonnie Green"
+                                                        width={24}
+                                                        height={24}
+                                                    />
                                                 <p className="inline-flex flex-col md:flex-row items-start mr-3 font-semibold text-sm text-gray-900 dark:text-white">
                                                     <span>Bonnie Green</span>
                                                     <time
